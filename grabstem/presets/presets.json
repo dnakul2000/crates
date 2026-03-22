@@ -1,0 +1,2549 @@
+[
+  {
+    "name": "Kanye West",
+    "genre": "Hip-Hop / Soul",
+    "category": "Soul Flippers",
+    "description": "Chipmunk soul chops with pitched-up vocal samples and punchy drums over sped-up classic soul phrases.",
+    "tags": ["soul", "chipmunk", "pitched-up", "soulful", "chop"],
+    "chop": {
+      "mode": "phrase",
+      "onset_sensitivity": 0.5,
+      "beat_division": 1.0,
+      "phrase_beats": 2,
+      "grain_size_ms": 50,
+      "min_chop_ms": 200,
+      "max_chop_ms": 4000,
+      "swing_amount": 0.0,
+      "silence_threshold_db": -40,
+      "prefer_downbeats": true,
+      "crossfade_ms": 10
+    },
+    "effects": {
+      "vocals": [
+        {"type": "pitch_shift", "params": {"semitones": 6}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -12, "ratio": 4, "attack_ms": 10, "release_ms": 100}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.3, "wet_level": 0.15}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "compression", "params": {"threshold_db": -10, "ratio": 6, "attack_ms": 5, "release_ms": 80}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 4}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "compression", "params": {"threshold_db": -14, "ratio": 4, "attack_ms": 8, "release_ms": 120}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 8000}, "enabled": true}
+      ],
+      "other": [
+        {"type": "pitch_shift", "params": {"semitones": 5}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 10000}, "enabled": true}
+      ],
+      "global": [
+        {"type": "limiter", "params": {"threshold_db": -1, "release_ms": 50}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "chromatic",
+      "bank_assignments": {},
+      "sort_by": "pitch",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "Just Blaze",
+    "genre": "Hip-Hop / Soul",
+    "category": "Soul Flippers",
+    "description": "Grandiose soul chops with explosive drum programming, heavy compression, and cathedral-like reverb tails.",
+    "tags": ["soul", "dramatic", "epic", "compression", "reverb"],
+    "chop": {
+      "mode": "phrase",
+      "onset_sensitivity": 0.5,
+      "beat_division": 1.0,
+      "phrase_beats": 4,
+      "grain_size_ms": 50,
+      "min_chop_ms": 400,
+      "max_chop_ms": 8000,
+      "swing_amount": 0.0,
+      "silence_threshold_db": -38,
+      "prefer_downbeats": true,
+      "crossfade_ms": 8
+    },
+    "effects": {
+      "vocals": [
+        {"type": "compression", "params": {"threshold_db": -8, "ratio": 8, "attack_ms": 5, "release_ms": 60}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.7, "wet_level": 0.35}, "enabled": true},
+        {"type": "gain", "params": {"gain_db": 3}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "compression", "params": {"threshold_db": -6, "ratio": 8, "attack_ms": 2, "release_ms": 50}, "enabled": true},
+        {"type": "transient_shape", "params": {"attack_boost_db": 6, "sustain_db": -2}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.45, "wet_level": 0.15}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "compression", "params": {"threshold_db": -10, "ratio": 6, "attack_ms": 5, "release_ms": 100}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 3}, "enabled": true}
+      ],
+      "other": [
+        {"type": "compression", "params": {"threshold_db": -10, "ratio": 6, "attack_ms": 8, "release_ms": 80}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.6, "wet_level": 0.3}, "enabled": true}
+      ],
+      "global": [
+        {"type": "compression", "params": {"threshold_db": -6, "ratio": 4, "attack_ms": 10, "release_ms": 100}, "enabled": true},
+        {"type": "limiter", "params": {"threshold_db": -0.5, "release_ms": 30}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "chromatic",
+      "bank_assignments": {},
+      "sort_by": "pitch",
+      "velocity_layers": 2
+    }
+  },
+  {
+    "name": "9th Wonder",
+    "genre": "Hip-Hop / Soul",
+    "category": "Soul Flippers",
+    "description": "Clean and natural soul chops with minimal processing, letting the warmth of the original sample shine through.",
+    "tags": ["soul", "clean", "minimal", "warm", "natural"],
+    "chop": {
+      "mode": "phrase",
+      "onset_sensitivity": 0.5,
+      "beat_division": 1.0,
+      "phrase_beats": 4,
+      "grain_size_ms": 50,
+      "min_chop_ms": 300,
+      "max_chop_ms": 6000,
+      "swing_amount": 0.0,
+      "silence_threshold_db": -42,
+      "prefer_downbeats": true,
+      "crossfade_ms": 8
+    },
+    "effects": {
+      "vocals": [
+        {"type": "compression", "params": {"threshold_db": -16, "ratio": 2, "attack_ms": 15, "release_ms": 150}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 12000}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "compression", "params": {"threshold_db": -14, "ratio": 3, "attack_ms": 10, "release_ms": 100}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "compression", "params": {"threshold_db": -14, "ratio": 2.5, "attack_ms": 10, "release_ms": 120}, "enabled": true}
+      ],
+      "other": [
+        {"type": "filter_lp", "params": {"cutoff_hz": 11000}, "enabled": true}
+      ],
+      "global": [
+        {"type": "limiter", "params": {"threshold_db": -1, "release_ms": 80}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "grouped",
+      "bank_assignments": {},
+      "sort_by": "time",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "Madlib",
+    "genre": "Hip-Hop / Experimental",
+    "category": "Crate Diggers",
+    "description": "Raw vinyl-drenched chops with unpredictable pitch variation and lo-fi warmth drawn from obscure global records.",
+    "tags": ["vinyl", "lo-fi", "experimental", "crate-digging", "raw"],
+    "chop": {
+      "mode": "onset",
+      "onset_sensitivity": 0.6,
+      "beat_division": 1.0,
+      "phrase_beats": 4,
+      "grain_size_ms": 50,
+      "min_chop_ms": 100,
+      "max_chop_ms": 4000,
+      "swing_amount": 0.15,
+      "silence_threshold_db": -36,
+      "prefer_downbeats": false,
+      "crossfade_ms": 5
+    },
+    "effects": {
+      "vocals": [
+        {"type": "vinyl_crackle", "params": {"vinyl_intensity": 0.6}, "enabled": true},
+        {"type": "pitch_shift", "params": {"semitones": 2}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 8000}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "vinyl_crackle", "params": {"vinyl_intensity": 0.5}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 5}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -12, "ratio": 4, "attack_ms": 8, "release_ms": 80}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "vinyl_crackle", "params": {"vinyl_intensity": 0.3}, "enabled": true},
+        {"type": "pitch_shift", "params": {"semitones": -2}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 6000}, "enabled": true}
+      ],
+      "other": [
+        {"type": "vinyl_crackle", "params": {"vinyl_intensity": 0.55}, "enabled": true},
+        {"type": "pitch_shift", "params": {"semitones": 1}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 4}, "enabled": true}
+      ],
+      "global": [
+        {"type": "filter_lp", "params": {"cutoff_hz": 9000}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "sequential",
+      "bank_assignments": {},
+      "sort_by": "time",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "DJ Shadow",
+    "genre": "Trip-Hop / Hip-Hop",
+    "category": "Crate Diggers",
+    "description": "Cinematic sample collages with deep vinyl texture, compressed-to-the-wall drums, and expansive delay trails.",
+    "tags": ["cinematic", "vinyl", "delay", "collage", "atmospheric"],
+    "chop": {
+      "mode": "onset",
+      "onset_sensitivity": 0.55,
+      "beat_division": 1.0,
+      "phrase_beats": 4,
+      "grain_size_ms": 50,
+      "min_chop_ms": 150,
+      "max_chop_ms": 6000,
+      "swing_amount": 0.0,
+      "silence_threshold_db": -42,
+      "prefer_downbeats": false,
+      "crossfade_ms": 10
+    },
+    "effects": {
+      "vocals": [
+        {"type": "vinyl_crackle", "params": {"vinyl_intensity": 0.45}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -10, "ratio": 6, "attack_ms": 8, "release_ms": 80}, "enabled": true},
+        {"type": "delay", "params": {"delay_seconds": 0.375, "feedback": 0.35, "wet_level": 0.25}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.55, "wet_level": 0.25}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "compression", "params": {"threshold_db": -8, "ratio": 8, "attack_ms": 3, "release_ms": 50}, "enabled": true},
+        {"type": "vinyl_crackle", "params": {"vinyl_intensity": 0.3}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.35, "wet_level": 0.1}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "compression", "params": {"threshold_db": -12, "ratio": 5, "attack_ms": 6, "release_ms": 100}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 5000}, "enabled": true}
+      ],
+      "other": [
+        {"type": "vinyl_crackle", "params": {"vinyl_intensity": 0.4}, "enabled": true},
+        {"type": "delay", "params": {"delay_seconds": 0.5, "feedback": 0.4, "wet_level": 0.3}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.6, "wet_level": 0.3}, "enabled": true}
+      ],
+      "global": [
+        {"type": "compression", "params": {"threshold_db": -8, "ratio": 4, "attack_ms": 10, "release_ms": 100}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "sequential",
+      "bank_assignments": {},
+      "sort_by": "time",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "Exile",
+    "genre": "Hip-Hop / Boom Bap",
+    "category": "Crate Diggers",
+    "description": "Warm, tape-saturated soul and funk chops with gentle wobble and rich low-pass filtering for an analog feel.",
+    "tags": ["warm", "tape", "soul", "analog", "lo-fi"],
+    "chop": {
+      "mode": "onset",
+      "onset_sensitivity": 0.55,
+      "beat_division": 1.0,
+      "phrase_beats": 4,
+      "grain_size_ms": 50,
+      "min_chop_ms": 150,
+      "max_chop_ms": 5000,
+      "swing_amount": 0.1,
+      "silence_threshold_db": -40,
+      "prefer_downbeats": false,
+      "crossfade_ms": 8
+    },
+    "effects": {
+      "vocals": [
+        {"type": "tape_wobble", "params": {"rate": 1.2, "depth": 0.15}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 5}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 7000}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "saturation", "params": {"drive_db": 4}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -12, "ratio": 4, "attack_ms": 8, "release_ms": 90}, "enabled": true},
+        {"type": "tape_wobble", "params": {"rate": 0.8, "depth": 0.08}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "saturation", "params": {"drive_db": 3}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 5000}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -14, "ratio": 3, "attack_ms": 10, "release_ms": 120}, "enabled": true}
+      ],
+      "other": [
+        {"type": "tape_wobble", "params": {"rate": 1.0, "depth": 0.12}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 4}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 7500}, "enabled": true}
+      ],
+      "global": [
+        {"type": "filter_lp", "params": {"cutoff_hz": 9000}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "sequential",
+      "bank_assignments": {},
+      "sort_by": "time",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "The Bomb Squad",
+    "genre": "Hip-Hop / Noise",
+    "category": "Crate Diggers",
+    "description": "Relentless sample collisions with hyper-sensitive onset detection, extreme compression, and dense chaotic layering.",
+    "tags": ["dense", "chaotic", "compressed", "layered", "aggressive"],
+    "chop": {
+      "mode": "onset",
+      "onset_sensitivity": 0.9,
+      "beat_division": 1.0,
+      "phrase_beats": 4,
+      "grain_size_ms": 50,
+      "min_chop_ms": 100,
+      "max_chop_ms": 3000,
+      "swing_amount": 0.0,
+      "silence_threshold_db": -30,
+      "prefer_downbeats": false,
+      "crossfade_ms": 3
+    },
+    "effects": {
+      "vocals": [
+        {"type": "compression", "params": {"threshold_db": -6, "ratio": 10, "attack_ms": 2, "release_ms": 40}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 8}, "enabled": true},
+        {"type": "gain", "params": {"gain_db": 4}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "compression", "params": {"threshold_db": -4, "ratio": 10, "attack_ms": 1, "release_ms": 30}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 10}, "enabled": true},
+        {"type": "transient_shape", "params": {"attack_boost_db": 8, "sustain_db": 2}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "compression", "params": {"threshold_db": -6, "ratio": 10, "attack_ms": 3, "release_ms": 50}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 7}, "enabled": true}
+      ],
+      "other": [
+        {"type": "compression", "params": {"threshold_db": -6, "ratio": 10, "attack_ms": 2, "release_ms": 40}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 9}, "enabled": true},
+        {"type": "filter_hp", "params": {"cutoff_hz": 200}, "enabled": true}
+      ],
+      "global": [
+        {"type": "compression", "params": {"threshold_db": -4, "ratio": 10, "attack_ms": 1, "release_ms": 30}, "enabled": true},
+        {"type": "limiter", "params": {"threshold_db": -0.3, "release_ms": 20}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "grouped",
+      "bank_assignments": {},
+      "sort_by": "energy",
+      "velocity_layers": 2
+    }
+  },
+  {
+    "name": "DJ Premier",
+    "genre": "Hip-Hop / Boom Bap",
+    "category": "Boom Bap Architects",
+    "description": "Razor-sharp transient chops with aggressive attack shaping, tight gating, and raw vinyl grit.",
+    "tags": ["boom-bap", "transient", "sharp", "gritty", "classic"],
+    "chop": {
+      "mode": "transient",
+      "onset_sensitivity": 0.65,
+      "beat_division": 1.0,
+      "phrase_beats": 4,
+      "grain_size_ms": 50,
+      "min_chop_ms": 100,
+      "max_chop_ms": 4000,
+      "swing_amount": 0.0,
+      "silence_threshold_db": -36,
+      "prefer_downbeats": false,
+      "crossfade_ms": 3
+    },
+    "effects": {
+      "vocals": [
+        {"type": "transient_shape", "params": {"attack_boost_db": 6, "sustain_db": -3}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -10, "ratio": 5, "attack_ms": 5, "release_ms": 60}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 9000}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "transient_shape", "params": {"attack_boost_db": 6, "sustain_db": -4}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -8, "ratio": 6, "attack_ms": 2, "release_ms": 40}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 3}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "transient_shape", "params": {"attack_boost_db": 4, "sustain_db": -2}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -12, "ratio": 4, "attack_ms": 5, "release_ms": 80}, "enabled": true}
+      ],
+      "other": [
+        {"type": "transient_shape", "params": {"attack_boost_db": 6, "sustain_db": -3}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 8000}, "enabled": true}
+      ],
+      "global": [
+        {"type": "limiter", "params": {"threshold_db": -1, "release_ms": 40}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "grouped",
+      "bank_assignments": {},
+      "sort_by": "energy",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "Pete Rock",
+    "genre": "Hip-Hop / Jazz",
+    "category": "Boom Bap Architects",
+    "description": "Jazzy quarter-note chops with deep swing feel, warm chorus, and lush reverb creating a smooth, head-nodding groove.",
+    "tags": ["jazz", "swing", "warm", "chorus", "smooth"],
+    "chop": {
+      "mode": "beat_grid",
+      "onset_sensitivity": 0.5,
+      "beat_division": 1.0,
+      "phrase_beats": 4,
+      "grain_size_ms": 50,
+      "min_chop_ms": 200,
+      "max_chop_ms": 5000,
+      "swing_amount": 0.3,
+      "silence_threshold_db": -40,
+      "prefer_downbeats": true,
+      "crossfade_ms": 10
+    },
+    "effects": {
+      "vocals": [
+        {"type": "chorus", "params": {"rate_hz": 0.8, "depth": 0.3, "mix": 0.2}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.5, "wet_level": 0.25}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -14, "ratio": 3, "attack_ms": 12, "release_ms": 120}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "compression", "params": {"threshold_db": -10, "ratio": 4, "attack_ms": 5, "release_ms": 70}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.3, "wet_level": 0.1}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 2}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "compression", "params": {"threshold_db": -14, "ratio": 3, "attack_ms": 8, "release_ms": 100}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 6000}, "enabled": true}
+      ],
+      "other": [
+        {"type": "chorus", "params": {"rate_hz": 0.6, "depth": 0.25, "mix": 0.18}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.45, "wet_level": 0.2}, "enabled": true}
+      ],
+      "global": [
+        {"type": "filter_lp", "params": {"cutoff_hz": 11000}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "hybrid",
+      "bank_assignments": {},
+      "sort_by": "pitch",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "Large Professor",
+    "genre": "Hip-Hop / Boom Bap",
+    "category": "Boom Bap Architects",
+    "description": "Tight eighth-note grid chops with clean, transparent compression preserving the natural dynamics of the source.",
+    "tags": ["clean", "tight", "boom-bap", "classic", "precise"],
+    "chop": {
+      "mode": "beat_grid",
+      "onset_sensitivity": 0.5,
+      "beat_division": 0.5,
+      "phrase_beats": 4,
+      "grain_size_ms": 50,
+      "min_chop_ms": 150,
+      "max_chop_ms": 4000,
+      "swing_amount": 0.0,
+      "silence_threshold_db": -40,
+      "prefer_downbeats": false,
+      "crossfade_ms": 5
+    },
+    "effects": {
+      "vocals": [
+        {"type": "compression", "params": {"threshold_db": -14, "ratio": 3, "attack_ms": 10, "release_ms": 100}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 10000}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "compression", "params": {"threshold_db": -12, "ratio": 3.5, "attack_ms": 5, "release_ms": 70}, "enabled": true},
+        {"type": "transient_shape", "params": {"attack_boost_db": 3, "sustain_db": -1}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "compression", "params": {"threshold_db": -14, "ratio": 3, "attack_ms": 8, "release_ms": 100}, "enabled": true}
+      ],
+      "other": [
+        {"type": "compression", "params": {"threshold_db": -16, "ratio": 2.5, "attack_ms": 12, "release_ms": 120}, "enabled": true}
+      ],
+      "global": [
+        {"type": "limiter", "params": {"threshold_db": -1, "release_ms": 60}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "grouped",
+      "bank_assignments": {},
+      "sort_by": "time",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "Evidence",
+    "genre": "Hip-Hop / Underground",
+    "category": "Boom Bap Architects",
+    "description": "Gritty onset-detected chops with warm low-pass filtering, analog saturation, and subtle vinyl texture.",
+    "tags": ["gritty", "filtered", "underground", "vinyl", "warm"],
+    "chop": {
+      "mode": "onset",
+      "onset_sensitivity": 0.55,
+      "beat_division": 1.0,
+      "phrase_beats": 4,
+      "grain_size_ms": 50,
+      "min_chop_ms": 120,
+      "max_chop_ms": 4500,
+      "swing_amount": 0.0,
+      "silence_threshold_db": -38,
+      "prefer_downbeats": false,
+      "crossfade_ms": 5
+    },
+    "effects": {
+      "vocals": [
+        {"type": "filter_lp", "params": {"cutoff_hz": 7000}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 4}, "enabled": true},
+        {"type": "vinyl_crackle", "params": {"vinyl_intensity": 0.35}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "filter_lp", "params": {"cutoff_hz": 8000}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 3}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -10, "ratio": 5, "attack_ms": 4, "release_ms": 60}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "filter_lp", "params": {"cutoff_hz": 5000}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 3}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -14, "ratio": 3, "attack_ms": 8, "release_ms": 100}, "enabled": true}
+      ],
+      "other": [
+        {"type": "filter_lp", "params": {"cutoff_hz": 7000}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 4}, "enabled": true},
+        {"type": "vinyl_crackle", "params": {"vinyl_intensity": 0.3}, "enabled": true}
+      ],
+      "global": [
+        {"type": "vinyl_crackle", "params": {"vinyl_intensity": 0.2}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "sequential",
+      "bank_assignments": {},
+      "sort_by": "time",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "J Dilla",
+    "genre": "Hip-Hop / Neo-Soul",
+    "category": "Groove Scientists",
+    "description": "Legendary drunken swing with tape-warped eighth-note chops, off-grid timing, and organic warmth throughout.",
+    "tags": ["swing", "drunken", "tape", "lo-fi", "groove"],
+    "chop": {
+      "mode": "beat_grid",
+      "onset_sensitivity": 0.5,
+      "beat_division": 0.5,
+      "phrase_beats": 4,
+      "grain_size_ms": 50,
+      "min_chop_ms": 150,
+      "max_chop_ms": 4000,
+      "swing_amount": 0.72,
+      "silence_threshold_db": -40,
+      "prefer_downbeats": false,
+      "crossfade_ms": 8
+    },
+    "effects": {
+      "vocals": [
+        {"type": "tape_wobble", "params": {"rate": 1.5, "depth": 0.2}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 8000}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 3}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "tape_wobble", "params": {"rate": 0.5, "depth": 0.08}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -10, "ratio": 4, "attack_ms": 8, "release_ms": 80}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 2}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "tape_wobble", "params": {"rate": 0.8, "depth": 0.1}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 5000}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -14, "ratio": 3, "attack_ms": 10, "release_ms": 120}, "enabled": true}
+      ],
+      "other": [
+        {"type": "tape_wobble", "params": {"rate": 1.2, "depth": 0.15}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 7500}, "enabled": true}
+      ],
+      "global": [
+        {"type": "filter_lp", "params": {"cutoff_hz": 10000}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "hybrid",
+      "bank_assignments": {},
+      "sort_by": "time",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "D'Angelo",
+    "genre": "Neo-Soul / R&B",
+    "category": "Groove Scientists",
+    "description": "Deep pocket groove with heavy swing, warm tape saturation, and an organic, behind-the-beat feel.",
+    "tags": ["neo-soul", "swing", "tape", "warm", "organic"],
+    "chop": {
+      "mode": "beat_grid",
+      "onset_sensitivity": 0.5,
+      "beat_division": 0.5,
+      "phrase_beats": 4,
+      "grain_size_ms": 50,
+      "min_chop_ms": 200,
+      "max_chop_ms": 5000,
+      "swing_amount": 0.65,
+      "silence_threshold_db": -42,
+      "prefer_downbeats": true,
+      "crossfade_ms": 12
+    },
+    "effects": {
+      "vocals": [
+        {"type": "tape_wobble", "params": {"rate": 0.9, "depth": 0.12}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 4}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.35, "wet_level": 0.15}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "tape_wobble", "params": {"rate": 0.6, "depth": 0.06}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 3}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -12, "ratio": 3, "attack_ms": 10, "release_ms": 100}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "saturation", "params": {"drive_db": 3}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -14, "ratio": 3, "attack_ms": 10, "release_ms": 120}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 4500}, "enabled": true}
+      ],
+      "other": [
+        {"type": "tape_wobble", "params": {"rate": 0.8, "depth": 0.1}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 3}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.3, "wet_level": 0.12}, "enabled": true}
+      ],
+      "global": [
+        {"type": "saturation", "params": {"drive_db": 2}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "grouped",
+      "bank_assignments": {},
+      "sort_by": "time",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "Kaytranada",
+    "genre": "Electronic / House / Hip-Hop",
+    "category": "Groove Scientists",
+    "description": "Bouncy, warm eighth-note chops with moderate swing, tight compression, and a modern dancefloor-ready groove.",
+    "tags": ["bouncy", "house", "swing", "warm", "modern"],
+    "chop": {
+      "mode": "beat_grid",
+      "onset_sensitivity": 0.5,
+      "beat_division": 0.5,
+      "phrase_beats": 4,
+      "grain_size_ms": 50,
+      "min_chop_ms": 150,
+      "max_chop_ms": 4000,
+      "swing_amount": 0.55,
+      "silence_threshold_db": -40,
+      "prefer_downbeats": false,
+      "crossfade_ms": 6
+    },
+    "effects": {
+      "vocals": [
+        {"type": "compression", "params": {"threshold_db": -12, "ratio": 3.5, "attack_ms": 10, "release_ms": 90}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 10000}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.25, "wet_level": 0.12}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "compression", "params": {"threshold_db": -10, "ratio": 4, "attack_ms": 3, "release_ms": 50}, "enabled": true},
+        {"type": "transient_shape", "params": {"attack_boost_db": 3, "sustain_db": -2}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 2}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "compression", "params": {"threshold_db": -12, "ratio": 4, "attack_ms": 6, "release_ms": 80}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 2}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 6000}, "enabled": true}
+      ],
+      "other": [
+        {"type": "compression", "params": {"threshold_db": -14, "ratio": 3, "attack_ms": 10, "release_ms": 100}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 9000}, "enabled": true}
+      ],
+      "global": [
+        {"type": "compression", "params": {"threshold_db": -10, "ratio": 2.5, "attack_ms": 12, "release_ms": 100}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "hybrid",
+      "bank_assignments": {},
+      "sort_by": "time",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "Nujabes",
+    "genre": "Jazz Hop / Chillhop",
+    "category": "Groove Scientists",
+    "description": "Gentle quarter-note jazz chops with soft swing, vinyl warmth, and delicate filtering for a meditative, contemplative mood.",
+    "tags": ["jazz", "chill", "vinyl", "contemplative", "gentle"],
+    "chop": {
+      "mode": "beat_grid",
+      "onset_sensitivity": 0.5,
+      "beat_division": 1.0,
+      "phrase_beats": 4,
+      "grain_size_ms": 50,
+      "min_chop_ms": 250,
+      "max_chop_ms": 6000,
+      "swing_amount": 0.4,
+      "silence_threshold_db": -44,
+      "prefer_downbeats": true,
+      "crossfade_ms": 15
+    },
+    "effects": {
+      "vocals": [
+        {"type": "vinyl_crackle", "params": {"vinyl_intensity": 0.3}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 9000}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.4, "wet_level": 0.2}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "vinyl_crackle", "params": {"vinyl_intensity": 0.2}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -14, "ratio": 2.5, "attack_ms": 12, "release_ms": 120}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.25, "wet_level": 0.1}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "compression", "params": {"threshold_db": -16, "ratio": 2, "attack_ms": 10, "release_ms": 130}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 5000}, "enabled": true}
+      ],
+      "other": [
+        {"type": "vinyl_crackle", "params": {"vinyl_intensity": 0.25}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 8500}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.35, "wet_level": 0.18}, "enabled": true}
+      ],
+      "global": [
+        {"type": "filter_lp", "params": {"cutoff_hz": 11000}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "hybrid",
+      "bank_assignments": {},
+      "sort_by": "pitch",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "MF DOOM",
+    "genre": "Hip-Hop / Abstract",
+    "category": "Abstract Alchemists",
+    "description": "Syllable-chopped samples run through lo-fi bitcrushing, murky low-pass filtering, and warm analog saturation.",
+    "tags": ["abstract", "lo-fi", "bitcrush", "villain", "murky"],
+    "chop": {
+      "mode": "syllable",
+      "onset_sensitivity": 0.5,
+      "beat_division": 1.0,
+      "phrase_beats": 4,
+      "grain_size_ms": 50,
+      "min_chop_ms": 100,
+      "max_chop_ms": 3000,
+      "swing_amount": 0.1,
+      "silence_threshold_db": -36,
+      "prefer_downbeats": false,
+      "crossfade_ms": 5
+    },
+    "effects": {
+      "vocals": [
+        {"type": "bitcrush", "params": {"bit_depth": 10, "sample_rate": 22050}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 6000}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 5}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "bitcrush", "params": {"bit_depth": 12, "sample_rate": 26000}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -10, "ratio": 5, "attack_ms": 5, "release_ms": 60}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 4}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "bitcrush", "params": {"bit_depth": 12, "sample_rate": 28000}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 4000}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 3}, "enabled": true}
+      ],
+      "other": [
+        {"type": "bitcrush", "params": {"bit_depth": 10, "sample_rate": 22050}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 6000}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 5}, "enabled": true}
+      ],
+      "global": [
+        {"type": "filter_lp", "params": {"cutoff_hz": 8000}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "sequential",
+      "bank_assignments": {},
+      "sort_by": "time",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "Knxwledge",
+    "genre": "Hip-Hop / Lo-Fi",
+    "category": "Abstract Alchemists",
+    "description": "Hazy, pitch-wandered chops with gentle onset detection, tape flutter, vinyl dust, and a woozy lo-fi aesthetic.",
+    "tags": ["lo-fi", "hazy", "tape", "vinyl", "woozy"],
+    "chop": {
+      "mode": "onset",
+      "onset_sensitivity": 0.4,
+      "beat_division": 1.0,
+      "phrase_beats": 4,
+      "grain_size_ms": 50,
+      "min_chop_ms": 150,
+      "max_chop_ms": 5000,
+      "swing_amount": 0.2,
+      "silence_threshold_db": -38,
+      "prefer_downbeats": false,
+      "crossfade_ms": 8
+    },
+    "effects": {
+      "vocals": [
+        {"type": "pitch_shift", "params": {"semitones": 2}, "enabled": true},
+        {"type": "tape_wobble", "params": {"rate": 2.0, "depth": 0.25}, "enabled": true},
+        {"type": "vinyl_crackle", "params": {"vinyl_intensity": 0.5}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 7000}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "tape_wobble", "params": {"rate": 0.8, "depth": 0.1}, "enabled": true},
+        {"type": "vinyl_crackle", "params": {"vinyl_intensity": 0.4}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -12, "ratio": 3, "attack_ms": 8, "release_ms": 80}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "pitch_shift", "params": {"semitones": -2}, "enabled": true},
+        {"type": "tape_wobble", "params": {"rate": 1.0, "depth": 0.12}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 4500}, "enabled": true}
+      ],
+      "other": [
+        {"type": "pitch_shift", "params": {"semitones": 1}, "enabled": true},
+        {"type": "tape_wobble", "params": {"rate": 1.5, "depth": 0.2}, "enabled": true},
+        {"type": "vinyl_crackle", "params": {"vinyl_intensity": 0.45}, "enabled": true}
+      ],
+      "global": [
+        {"type": "vinyl_crackle", "params": {"vinyl_intensity": 0.3}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 9000}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "sequential",
+      "bank_assignments": {},
+      "sort_by": "time",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "Alchemist",
+    "genre": "Hip-Hop / Cinematic",
+    "category": "Abstract Alchemists",
+    "description": "Atmospheric onset chops drenched in reverb and delay with tasteful filtering for a moody, cinematic palette.",
+    "tags": ["atmospheric", "moody", "reverb", "delay", "cinematic"],
+    "chop": {
+      "mode": "onset",
+      "onset_sensitivity": 0.5,
+      "beat_division": 1.0,
+      "phrase_beats": 4,
+      "grain_size_ms": 50,
+      "min_chop_ms": 150,
+      "max_chop_ms": 5000,
+      "swing_amount": 0.0,
+      "silence_threshold_db": -40,
+      "prefer_downbeats": false,
+      "crossfade_ms": 8
+    },
+    "effects": {
+      "vocals": [
+        {"type": "reverb", "params": {"room_size": 0.6, "wet_level": 0.3}, "enabled": true},
+        {"type": "delay", "params": {"delay_seconds": 0.3, "feedback": 0.3, "wet_level": 0.2}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 8000}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "compression", "params": {"threshold_db": -10, "ratio": 5, "attack_ms": 5, "release_ms": 60}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.35, "wet_level": 0.12}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "compression", "params": {"threshold_db": -14, "ratio": 3, "attack_ms": 8, "release_ms": 100}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 5000}, "enabled": true}
+      ],
+      "other": [
+        {"type": "reverb", "params": {"room_size": 0.55, "wet_level": 0.28}, "enabled": true},
+        {"type": "delay", "params": {"delay_seconds": 0.4, "feedback": 0.35, "wet_level": 0.22}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 7500}, "enabled": true}
+      ],
+      "global": [
+        {"type": "filter_lp", "params": {"cutoff_hz": 10000}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "sequential",
+      "bank_assignments": {},
+      "sort_by": "time",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "Harry Fraud",
+    "genre": "Hip-Hop / Cloud Rap",
+    "category": "Abstract Alchemists",
+    "description": "Dreamy two-beat phrase chops with lush reverb, shimmering chorus, and gentle high-frequency roll-off for a cloud-rap haze.",
+    "tags": ["dreamy", "cloud", "reverb", "chorus", "lush"],
+    "chop": {
+      "mode": "phrase",
+      "onset_sensitivity": 0.5,
+      "beat_division": 1.0,
+      "phrase_beats": 2,
+      "grain_size_ms": 50,
+      "min_chop_ms": 200,
+      "max_chop_ms": 5000,
+      "swing_amount": 0.0,
+      "silence_threshold_db": -42,
+      "prefer_downbeats": true,
+      "crossfade_ms": 12
+    },
+    "effects": {
+      "vocals": [
+        {"type": "reverb", "params": {"room_size": 0.65, "wet_level": 0.35}, "enabled": true},
+        {"type": "chorus", "params": {"rate_hz": 0.7, "depth": 0.35, "mix": 0.25}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 9000}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "compression", "params": {"threshold_db": -12, "ratio": 3, "attack_ms": 8, "release_ms": 80}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.3, "wet_level": 0.12}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "compression", "params": {"threshold_db": -14, "ratio": 3, "attack_ms": 10, "release_ms": 100}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 5500}, "enabled": true}
+      ],
+      "other": [
+        {"type": "reverb", "params": {"room_size": 0.6, "wet_level": 0.3}, "enabled": true},
+        {"type": "chorus", "params": {"rate_hz": 0.6, "depth": 0.3, "mix": 0.2}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 9000}, "enabled": true}
+      ],
+      "global": [
+        {"type": "reverb", "params": {"room_size": 0.5, "wet_level": 0.15}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "chromatic",
+      "bank_assignments": {},
+      "sort_by": "pitch",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "Clams Casino",
+    "genre": "Hip-Hop / Cloud Rap",
+    "category": "Abstract Alchemists",
+    "description": "Ethereal four-beat phrases with massive reverb washes, dark low-pass filtering, and subtle pitch-down for a submerged, otherworldly sound.",
+    "tags": ["ethereal", "cloud", "atmospheric", "reverb", "dark"],
+    "chop": {
+      "mode": "phrase",
+      "onset_sensitivity": 0.5,
+      "beat_division": 1.0,
+      "phrase_beats": 4,
+      "grain_size_ms": 50,
+      "min_chop_ms": 400,
+      "max_chop_ms": 8000,
+      "swing_amount": 0.0,
+      "silence_threshold_db": -44,
+      "prefer_downbeats": true,
+      "crossfade_ms": 20
+    },
+    "effects": {
+      "vocals": [
+        {"type": "reverb", "params": {"room_size": 0.9, "wet_level": 0.55}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 6000}, "enabled": true},
+        {"type": "pitch_shift", "params": {"semitones": -1}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "reverb", "params": {"room_size": 0.5, "wet_level": 0.2}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -12, "ratio": 3, "attack_ms": 10, "release_ms": 100}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "filter_lp", "params": {"cutoff_hz": 4000}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.4, "wet_level": 0.15}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -14, "ratio": 3, "attack_ms": 10, "release_ms": 120}, "enabled": true}
+      ],
+      "other": [
+        {"type": "reverb", "params": {"room_size": 0.85, "wet_level": 0.5}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 6000}, "enabled": true},
+        {"type": "pitch_shift", "params": {"semitones": -1}, "enabled": true},
+        {"type": "delay", "params": {"delay_seconds": 0.5, "feedback": 0.4, "wet_level": 0.2}, "enabled": true}
+      ],
+      "global": [
+        {"type": "filter_lp", "params": {"cutoff_hz": 8000}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.7, "wet_level": 0.25}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "chromatic",
+      "bank_assignments": {},
+      "sort_by": "pitch",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "Metro Boomin",
+    "genre": "Hip-Hop / Trap",
+    "category": "Modern Architects",
+    "description": "Hard-hitting transient-detected chops with extreme attack shaping, brick-wall compression, and aggressive punch.",
+    "tags": ["trap", "hard", "transient", "punchy", "aggressive"],
+    "chop": {
+      "mode": "transient",
+      "onset_sensitivity": 0.7,
+      "beat_division": 1.0,
+      "phrase_beats": 4,
+      "grain_size_ms": 50,
+      "min_chop_ms": 100,
+      "max_chop_ms": 4000,
+      "swing_amount": 0.0,
+      "silence_threshold_db": -34,
+      "prefer_downbeats": false,
+      "crossfade_ms": 3
+    },
+    "effects": {
+      "vocals": [
+        {"type": "transient_shape", "params": {"attack_boost_db": 9, "sustain_db": -4}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -6, "ratio": 10, "attack_ms": 1, "release_ms": 30}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.4, "wet_level": 0.15}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "transient_shape", "params": {"attack_boost_db": 9, "sustain_db": -5}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -4, "ratio": 10, "attack_ms": 0.5, "release_ms": 25}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 4}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "compression", "params": {"threshold_db": -6, "ratio": 8, "attack_ms": 2, "release_ms": 40}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 5000}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 3}, "enabled": true}
+      ],
+      "other": [
+        {"type": "transient_shape", "params": {"attack_boost_db": 6, "sustain_db": -3}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -8, "ratio": 8, "attack_ms": 2, "release_ms": 40}, "enabled": true}
+      ],
+      "global": [
+        {"type": "compression", "params": {"threshold_db": -4, "ratio": 10, "attack_ms": 1, "release_ms": 25}, "enabled": true},
+        {"type": "limiter", "params": {"threshold_db": -0.3, "release_ms": 15}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "grouped",
+      "bank_assignments": {},
+      "sort_by": "energy",
+      "velocity_layers": 2
+    }
+  },
+  {
+    "name": "Tyler, The Creator",
+    "genre": "Hip-Hop / Neo-Soul / Funk",
+    "category": "Modern Architects",
+    "description": "Colorful two-beat phrase chops with warm chorus modulation, vintage reverb, and gentle saturation for a retro-modern feel.",
+    "tags": ["colorful", "chorus", "warm", "retro", "funk"],
+    "chop": {
+      "mode": "phrase",
+      "onset_sensitivity": 0.5,
+      "beat_division": 1.0,
+      "phrase_beats": 2,
+      "grain_size_ms": 50,
+      "min_chop_ms": 200,
+      "max_chop_ms": 5000,
+      "swing_amount": 0.1,
+      "silence_threshold_db": -40,
+      "prefer_downbeats": true,
+      "crossfade_ms": 10
+    },
+    "effects": {
+      "vocals": [
+        {"type": "chorus", "params": {"rate_hz": 1.2, "depth": 0.4, "mix": 0.25}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.45, "wet_level": 0.2}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 3}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "compression", "params": {"threshold_db": -10, "ratio": 4, "attack_ms": 5, "release_ms": 60}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 2}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.25, "wet_level": 0.08}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "saturation", "params": {"drive_db": 3}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -12, "ratio": 3, "attack_ms": 8, "release_ms": 100}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 6000}, "enabled": true}
+      ],
+      "other": [
+        {"type": "chorus", "params": {"rate_hz": 1.0, "depth": 0.35, "mix": 0.22}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.4, "wet_level": 0.18}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 3}, "enabled": true}
+      ],
+      "global": [
+        {"type": "saturation", "params": {"drive_db": 1.5}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "chromatic",
+      "bank_assignments": {},
+      "sort_by": "pitch",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "Pharrell / Neptunes",
+    "genre": "Hip-Hop / Pop / R&B",
+    "category": "Modern Architects",
+    "description": "Crisp sixteenth-note grid chops with precise transient shaping and tight compression for a clean, punchy, minimalist sound.",
+    "tags": ["crisp", "minimal", "punchy", "clean", "precise"],
+    "chop": {
+      "mode": "beat_grid",
+      "onset_sensitivity": 0.5,
+      "beat_division": 0.25,
+      "phrase_beats": 4,
+      "grain_size_ms": 50,
+      "min_chop_ms": 100,
+      "max_chop_ms": 3000,
+      "swing_amount": 0.0,
+      "silence_threshold_db": -38,
+      "prefer_downbeats": false,
+      "crossfade_ms": 3
+    },
+    "effects": {
+      "vocals": [
+        {"type": "transient_shape", "params": {"attack_boost_db": 4, "sustain_db": -2}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -10, "ratio": 4, "attack_ms": 3, "release_ms": 40}, "enabled": true},
+        {"type": "filter_hp", "params": {"cutoff_hz": 120}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "transient_shape", "params": {"attack_boost_db": 5, "sustain_db": -3}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -8, "ratio": 5, "attack_ms": 1, "release_ms": 30}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "compression", "params": {"threshold_db": -10, "ratio": 4, "attack_ms": 4, "release_ms": 60}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 5000}, "enabled": true}
+      ],
+      "other": [
+        {"type": "transient_shape", "params": {"attack_boost_db": 3, "sustain_db": -2}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -12, "ratio": 3.5, "attack_ms": 5, "release_ms": 50}, "enabled": true}
+      ],
+      "global": [
+        {"type": "limiter", "params": {"threshold_db": -0.5, "release_ms": 25}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "grouped",
+      "bank_assignments": {},
+      "sort_by": "time",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "Timbaland",
+    "genre": "Hip-Hop / R&B / Pop",
+    "category": "Modern Architects",
+    "description": "Bouncy eighth-note chops with moderate swing, digital grit from bitcrushing, and playful pitch manipulation.",
+    "tags": ["bouncy", "bitcrush", "swing", "playful", "digital"],
+    "chop": {
+      "mode": "beat_grid",
+      "onset_sensitivity": 0.5,
+      "beat_division": 0.5,
+      "phrase_beats": 4,
+      "grain_size_ms": 50,
+      "min_chop_ms": 120,
+      "max_chop_ms": 4000,
+      "swing_amount": 0.4,
+      "silence_threshold_db": -38,
+      "prefer_downbeats": false,
+      "crossfade_ms": 5
+    },
+    "effects": {
+      "vocals": [
+        {"type": "bitcrush", "params": {"bit_depth": 12, "sample_rate": 32000}, "enabled": true},
+        {"type": "pitch_shift", "params": {"semitones": 3}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -10, "ratio": 5, "attack_ms": 5, "release_ms": 50}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "compression", "params": {"threshold_db": -8, "ratio": 6, "attack_ms": 2, "release_ms": 35}, "enabled": true},
+        {"type": "transient_shape", "params": {"attack_boost_db": 5, "sustain_db": -3}, "enabled": true},
+        {"type": "bitcrush", "params": {"bit_depth": 14, "sample_rate": 36000}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "compression", "params": {"threshold_db": -10, "ratio": 5, "attack_ms": 4, "release_ms": 60}, "enabled": true},
+        {"type": "pitch_shift", "params": {"semitones": -2}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 5000}, "enabled": true}
+      ],
+      "other": [
+        {"type": "bitcrush", "params": {"bit_depth": 12, "sample_rate": 30000}, "enabled": true},
+        {"type": "pitch_shift", "params": {"semitones": 2}, "enabled": true}
+      ],
+      "global": [
+        {"type": "limiter", "params": {"threshold_db": -0.5, "release_ms": 30}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "grouped",
+      "bank_assignments": {},
+      "sort_by": "time",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "Kenny Beats",
+    "genre": "Hip-Hop / Experimental",
+    "category": "Modern Architects",
+    "description": "Punchy transient-detected chops with warm saturation and controlled compression for a polished yet aggressive sound.",
+    "tags": ["punchy", "saturated", "polished", "aggressive", "modern"],
+    "chop": {
+      "mode": "transient",
+      "onset_sensitivity": 0.6,
+      "beat_division": 1.0,
+      "phrase_beats": 4,
+      "grain_size_ms": 50,
+      "min_chop_ms": 100,
+      "max_chop_ms": 4000,
+      "swing_amount": 0.0,
+      "silence_threshold_db": -36,
+      "prefer_downbeats": false,
+      "crossfade_ms": 4
+    },
+    "effects": {
+      "vocals": [
+        {"type": "saturation", "params": {"drive_db": 5}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -10, "ratio": 6, "attack_ms": 4, "release_ms": 50}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "saturation", "params": {"drive_db": 4}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -8, "ratio": 6, "attack_ms": 2, "release_ms": 40}, "enabled": true},
+        {"type": "transient_shape", "params": {"attack_boost_db": 5, "sustain_db": -3}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "saturation", "params": {"drive_db": 4}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -10, "ratio": 5, "attack_ms": 5, "release_ms": 70}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 5500}, "enabled": true}
+      ],
+      "other": [
+        {"type": "saturation", "params": {"drive_db": 4}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -12, "ratio": 4, "attack_ms": 6, "release_ms": 60}, "enabled": true}
+      ],
+      "global": [
+        {"type": "limiter", "params": {"threshold_db": -0.5, "release_ms": 30}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "grouped",
+      "bank_assignments": {},
+      "sort_by": "energy",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "El-P (Run The Jewels)",
+    "genre": "Hip-Hop / Industrial",
+    "category": "Modern Architects",
+    "description": "Abrasive, industrial transient chops with heavy saturation, lo-fi bitcrushing, extreme compression, and hard clipping for maximum aggression.",
+    "tags": ["industrial", "abrasive", "distorted", "aggressive", "heavy"],
+    "chop": {
+      "mode": "transient",
+      "onset_sensitivity": 0.7,
+      "beat_division": 1.0,
+      "phrase_beats": 4,
+      "grain_size_ms": 50,
+      "min_chop_ms": 100,
+      "max_chop_ms": 3500,
+      "swing_amount": 0.0,
+      "silence_threshold_db": -32,
+      "prefer_downbeats": false,
+      "crossfade_ms": 2
+    },
+    "effects": {
+      "vocals": [
+        {"type": "saturation", "params": {"drive_db": 14}, "enabled": true},
+        {"type": "bitcrush", "params": {"bit_depth": 8, "sample_rate": 18000}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -4, "ratio": 10, "attack_ms": 1, "release_ms": 25}, "enabled": true},
+        {"type": "clipping", "params": {"threshold_db": -3}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "saturation", "params": {"drive_db": 12}, "enabled": true},
+        {"type": "bitcrush", "params": {"bit_depth": 10, "sample_rate": 20000}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -4, "ratio": 10, "attack_ms": 0.5, "release_ms": 20}, "enabled": true},
+        {"type": "clipping", "params": {"threshold_db": -2}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "saturation", "params": {"drive_db": 10}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -6, "ratio": 8, "attack_ms": 2, "release_ms": 35}, "enabled": true},
+        {"type": "clipping", "params": {"threshold_db": -3}, "enabled": true}
+      ],
+      "other": [
+        {"type": "saturation", "params": {"drive_db": 14}, "enabled": true},
+        {"type": "bitcrush", "params": {"bit_depth": 8, "sample_rate": 16000}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -4, "ratio": 10, "attack_ms": 1, "release_ms": 25}, "enabled": true},
+        {"type": "clipping", "params": {"threshold_db": -2}, "enabled": true}
+      ],
+      "global": [
+        {"type": "compression", "params": {"threshold_db": -3, "ratio": 10, "attack_ms": 0.5, "release_ms": 15}, "enabled": true},
+        {"type": "limiter", "params": {"threshold_db": -0.2, "release_ms": 10}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "grouped",
+      "bank_assignments": {},
+      "sort_by": "energy",
+      "velocity_layers": 2
+    }
+  },
+  {
+    "name": "Monte Booker",
+    "genre": "Hip-Hop / Electronic / Future",
+    "category": "Modern Architects",
+    "description": "Playful sixteenth-note chops with light swing, creative pitch shifting, and granular texturing for a future-forward sound.",
+    "tags": ["future", "playful", "granular", "pitch", "experimental"],
+    "chop": {
+      "mode": "beat_grid",
+      "onset_sensitivity": 0.5,
+      "beat_division": 0.25,
+      "phrase_beats": 4,
+      "grain_size_ms": 40,
+      "min_chop_ms": 100,
+      "max_chop_ms": 3000,
+      "swing_amount": 0.35,
+      "silence_threshold_db": -40,
+      "prefer_downbeats": false,
+      "crossfade_ms": 5
+    },
+    "effects": {
+      "vocals": [
+        {"type": "pitch_shift", "params": {"semitones": 3}, "enabled": true},
+        {"type": "granular", "params": {"grain_size_ms": 35, "scatter": 0.4}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.35, "wet_level": 0.15}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "compression", "params": {"threshold_db": -10, "ratio": 4, "attack_ms": 3, "release_ms": 40}, "enabled": true},
+        {"type": "transient_shape", "params": {"attack_boost_db": 4, "sustain_db": -2}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "pitch_shift", "params": {"semitones": -3}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -12, "ratio": 4, "attack_ms": 5, "release_ms": 70}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 5000}, "enabled": true}
+      ],
+      "other": [
+        {"type": "pitch_shift", "params": {"semitones": 2}, "enabled": true},
+        {"type": "granular", "params": {"grain_size_ms": 30, "scatter": 0.35}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.3, "wet_level": 0.12}, "enabled": true}
+      ],
+      "global": [
+        {"type": "limiter", "params": {"threshold_db": -0.5, "release_ms": 30}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "hybrid",
+      "bank_assignments": {},
+      "sort_by": "pitch",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "Aphex Twin",
+    "genre": "Electronic / IDM",
+    "category": "Deconstructionists",
+    "description": "Chaotic random-mode chops with aggressive bitcrushing, unpredictable granular scatter, wild pitch shifts, and sample rate destruction.",
+    "tags": ["IDM", "chaotic", "bitcrush", "random", "deconstructed"],
+    "chop": {
+      "mode": "random",
+      "onset_sensitivity": 0.5,
+      "beat_division": 1.0,
+      "phrase_beats": 4,
+      "grain_size_ms": 30,
+      "min_chop_ms": 50,
+      "max_chop_ms": 2000,
+      "swing_amount": 0.0,
+      "silence_threshold_db": -30,
+      "prefer_downbeats": false,
+      "crossfade_ms": 2
+    },
+    "effects": {
+      "vocals": [
+        {"type": "bitcrush", "params": {"bit_depth": 6, "sample_rate": 12000}, "enabled": true},
+        {"type": "granular", "params": {"grain_size_ms": 20, "scatter": 0.8}, "enabled": true},
+        {"type": "pitch_shift", "params": {"semitones": 7}, "enabled": true},
+        {"type": "resample", "params": {"sample_rate": 16000}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "bitcrush", "params": {"bit_depth": 8, "sample_rate": 14000}, "enabled": true},
+        {"type": "pitch_shift", "params": {"semitones": -5}, "enabled": true},
+        {"type": "granular", "params": {"grain_size_ms": 15, "scatter": 0.7}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -6, "ratio": 8, "attack_ms": 1, "release_ms": 20}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "bitcrush", "params": {"bit_depth": 8, "sample_rate": 16000}, "enabled": true},
+        {"type": "pitch_shift", "params": {"semitones": -3}, "enabled": true},
+        {"type": "resample", "params": {"sample_rate": 18000}, "enabled": true}
+      ],
+      "other": [
+        {"type": "bitcrush", "params": {"bit_depth": 6, "sample_rate": 11025}, "enabled": true},
+        {"type": "granular", "params": {"grain_size_ms": 10, "scatter": 0.9}, "enabled": true},
+        {"type": "pitch_shift", "params": {"semitones": 5}, "enabled": true},
+        {"type": "resample", "params": {"sample_rate": 14000}, "enabled": true}
+      ],
+      "global": [
+        {"type": "compression", "params": {"threshold_db": -6, "ratio": 6, "attack_ms": 1, "release_ms": 20}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "sequential",
+      "bank_assignments": {},
+      "sort_by": "random",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "Arca",
+    "genre": "Electronic / Experimental",
+    "category": "Deconstructionists",
+    "description": "Ultra-fine granular deconstruction with extreme pitch warping, radical timestretching, and cavernous reverb for a mutant, alien sound.",
+    "tags": ["experimental", "granular", "mutant", "alien", "extreme"],
+    "chop": {
+      "mode": "granular",
+      "onset_sensitivity": 0.5,
+      "beat_division": 1.0,
+      "phrase_beats": 4,
+      "grain_size_ms": 15,
+      "min_chop_ms": 50,
+      "max_chop_ms": 3000,
+      "swing_amount": 0.0,
+      "silence_threshold_db": -36,
+      "prefer_downbeats": false,
+      "crossfade_ms": 2
+    },
+    "effects": {
+      "vocals": [
+        {"type": "pitch_shift", "params": {"semitones": 12}, "enabled": true},
+        {"type": "timestretch", "params": {"factor": 2.0}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.95, "wet_level": 0.6}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "pitch_shift", "params": {"semitones": -12}, "enabled": true},
+        {"type": "timestretch", "params": {"factor": 0.5}, "enabled": true},
+        {"type": "granular", "params": {"grain_size_ms": 10, "scatter": 0.8}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.8, "wet_level": 0.4}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "pitch_shift", "params": {"semitones": -7}, "enabled": true},
+        {"type": "timestretch", "params": {"factor": 1.5}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.7, "wet_level": 0.3}, "enabled": true}
+      ],
+      "other": [
+        {"type": "pitch_shift", "params": {"semitones": 9}, "enabled": true},
+        {"type": "timestretch", "params": {"factor": 2.5}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.95, "wet_level": 0.55}, "enabled": true},
+        {"type": "granular", "params": {"grain_size_ms": 12, "scatter": 0.85}, "enabled": true}
+      ],
+      "global": [
+        {"type": "reverb", "params": {"room_size": 0.9, "wet_level": 0.35}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "sequential",
+      "bank_assignments": {},
+      "sort_by": "random",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "Oneohtrix Point Never",
+    "genre": "Electronic / Experimental",
+    "category": "Deconstructionists",
+    "description": "Meticulous granular fragmentation with radical pitch and time manipulation, deep reverb, and hyperreal digital textures.",
+    "tags": ["experimental", "granular", "hyperreal", "digital", "fragmented"],
+    "chop": {
+      "mode": "granular",
+      "onset_sensitivity": 0.5,
+      "beat_division": 1.0,
+      "phrase_beats": 4,
+      "grain_size_ms": 25,
+      "min_chop_ms": 60,
+      "max_chop_ms": 4000,
+      "swing_amount": 0.0,
+      "silence_threshold_db": -40,
+      "prefer_downbeats": false,
+      "crossfade_ms": 3
+    },
+    "effects": {
+      "vocals": [
+        {"type": "pitch_shift", "params": {"semitones": 10}, "enabled": true},
+        {"type": "timestretch", "params": {"factor": 2.0}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.85, "wet_level": 0.5}, "enabled": true},
+        {"type": "delay", "params": {"delay_seconds": 0.6, "feedback": 0.45, "wet_level": 0.25}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "pitch_shift", "params": {"semitones": -8}, "enabled": true},
+        {"type": "timestretch", "params": {"factor": 1.8}, "enabled": true},
+        {"type": "granular", "params": {"grain_size_ms": 20, "scatter": 0.6}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.7, "wet_level": 0.35}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "timestretch", "params": {"factor": 1.5}, "enabled": true},
+        {"type": "pitch_shift", "params": {"semitones": -5}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.6, "wet_level": 0.25}, "enabled": true}
+      ],
+      "other": [
+        {"type": "pitch_shift", "params": {"semitones": 7}, "enabled": true},
+        {"type": "timestretch", "params": {"factor": 2.5}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.9, "wet_level": 0.5}, "enabled": true},
+        {"type": "granular", "params": {"grain_size_ms": 18, "scatter": 0.7}, "enabled": true}
+      ],
+      "global": [
+        {"type": "reverb", "params": {"room_size": 0.8, "wet_level": 0.3}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "sequential",
+      "bank_assignments": {},
+      "sort_by": "random",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "Burial",
+    "genre": "Electronic / UK Garage / Dubstep",
+    "category": "Texture Weavers",
+    "description": "Ghostly granular fragments with stretched time, cavernous reverb, and persistent vinyl crackle evoking rainy nocturnal cityscapes.",
+    "tags": ["ghostly", "vinyl", "nocturnal", "dubstep", "atmospheric"],
+    "chop": {
+      "mode": "granular",
+      "onset_sensitivity": 0.5,
+      "beat_division": 1.0,
+      "phrase_beats": 4,
+      "grain_size_ms": 80,
+      "min_chop_ms": 100,
+      "max_chop_ms": 6000,
+      "swing_amount": 0.15,
+      "silence_threshold_db": -44,
+      "prefer_downbeats": false,
+      "crossfade_ms": 15
+    },
+    "effects": {
+      "vocals": [
+        {"type": "timestretch", "params": {"factor": 1.5}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.85, "wet_level": 0.45}, "enabled": true},
+        {"type": "vinyl_crackle", "params": {"vinyl_intensity": 0.6}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 7000}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "timestretch", "params": {"factor": 1.2}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.5, "wet_level": 0.2}, "enabled": true},
+        {"type": "vinyl_crackle", "params": {"vinyl_intensity": 0.4}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -12, "ratio": 3, "attack_ms": 10, "release_ms": 100}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "timestretch", "params": {"factor": 1.3}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 4000}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.4, "wet_level": 0.15}, "enabled": true}
+      ],
+      "other": [
+        {"type": "timestretch", "params": {"factor": 1.5}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.8, "wet_level": 0.4}, "enabled": true},
+        {"type": "vinyl_crackle", "params": {"vinyl_intensity": 0.55}, "enabled": true}
+      ],
+      "global": [
+        {"type": "vinyl_crackle", "params": {"vinyl_intensity": 0.35}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 9000}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "sequential",
+      "bank_assignments": {},
+      "sort_by": "time",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "Four Tet",
+    "genre": "Electronic / Folktronica",
+    "category": "Texture Weavers",
+    "description": "Delicate granular resynthesis with shimmering reverb and evolving filter sweeps creating intricate organic-electronic textures.",
+    "tags": ["delicate", "granular", "organic", "folktronica", "shimmering"],
+    "chop": {
+      "mode": "granular",
+      "onset_sensitivity": 0.5,
+      "beat_division": 1.0,
+      "phrase_beats": 4,
+      "grain_size_ms": 30,
+      "min_chop_ms": 80,
+      "max_chop_ms": 5000,
+      "swing_amount": 0.0,
+      "silence_threshold_db": -44,
+      "prefer_downbeats": false,
+      "crossfade_ms": 10
+    },
+    "effects": {
+      "vocals": [
+        {"type": "granular", "params": {"grain_size_ms": 25, "scatter": 0.5}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.6, "wet_level": 0.3}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 8000}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "granular", "params": {"grain_size_ms": 20, "scatter": 0.3}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.35, "wet_level": 0.15}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -14, "ratio": 2.5, "attack_ms": 8, "release_ms": 80}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "filter_lp", "params": {"cutoff_hz": 5000}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.3, "wet_level": 0.1}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -14, "ratio": 2, "attack_ms": 10, "release_ms": 100}, "enabled": true}
+      ],
+      "other": [
+        {"type": "granular", "params": {"grain_size_ms": 28, "scatter": 0.45}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.55, "wet_level": 0.28}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 9000}, "enabled": true}
+      ],
+      "global": [
+        {"type": "reverb", "params": {"room_size": 0.4, "wet_level": 0.12}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "chromatic",
+      "bank_assignments": {},
+      "sort_by": "pitch",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "James Blake",
+    "genre": "Electronic / Post-Dubstep / R&B",
+    "category": "Texture Weavers",
+    "description": "Haunting four-beat phrases pitched down with intimate reverb and controlled compression for a sparse, emotional landscape.",
+    "tags": ["haunting", "sparse", "emotional", "pitched-down", "intimate"],
+    "chop": {
+      "mode": "phrase",
+      "onset_sensitivity": 0.5,
+      "beat_division": 1.0,
+      "phrase_beats": 4,
+      "grain_size_ms": 50,
+      "min_chop_ms": 300,
+      "max_chop_ms": 8000,
+      "swing_amount": 0.0,
+      "silence_threshold_db": -44,
+      "prefer_downbeats": true,
+      "crossfade_ms": 15
+    },
+    "effects": {
+      "vocals": [
+        {"type": "pitch_shift", "params": {"semitones": -3}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.6, "wet_level": 0.3}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -14, "ratio": 3, "attack_ms": 12, "release_ms": 120}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "compression", "params": {"threshold_db": -10, "ratio": 4, "attack_ms": 5, "release_ms": 60}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.45, "wet_level": 0.18}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "compression", "params": {"threshold_db": -12, "ratio": 3, "attack_ms": 8, "release_ms": 100}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 4500}, "enabled": true}
+      ],
+      "other": [
+        {"type": "pitch_shift", "params": {"semitones": -3}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.55, "wet_level": 0.25}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -14, "ratio": 3, "attack_ms": 10, "release_ms": 110}, "enabled": true}
+      ],
+      "global": [
+        {"type": "compression", "params": {"threshold_db": -12, "ratio": 2, "attack_ms": 15, "release_ms": 150}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "chromatic",
+      "bank_assignments": {},
+      "sort_by": "pitch",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "Bonobo",
+    "genre": "Electronic / Downtempo",
+    "category": "Texture Weavers",
+    "description": "Lush quarter-note chops with wide stereo imaging, organic reverb, and gentle filtering for expansive, naturalistic soundscapes.",
+    "tags": ["downtempo", "lush", "organic", "wide", "naturalistic"],
+    "chop": {
+      "mode": "beat_grid",
+      "onset_sensitivity": 0.5,
+      "beat_division": 1.0,
+      "phrase_beats": 4,
+      "grain_size_ms": 50,
+      "min_chop_ms": 250,
+      "max_chop_ms": 6000,
+      "swing_amount": 0.1,
+      "silence_threshold_db": -44,
+      "prefer_downbeats": true,
+      "crossfade_ms": 15
+    },
+    "effects": {
+      "vocals": [
+        {"type": "reverb", "params": {"room_size": 0.55, "wet_level": 0.25}, "enabled": true},
+        {"type": "stereo_width", "params": {"width": 1.3}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 10000}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "compression", "params": {"threshold_db": -14, "ratio": 2.5, "attack_ms": 10, "release_ms": 100}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.3, "wet_level": 0.12}, "enabled": true},
+        {"type": "stereo_width", "params": {"width": 1.2}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "compression", "params": {"threshold_db": -14, "ratio": 2.5, "attack_ms": 10, "release_ms": 120}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 5000}, "enabled": true}
+      ],
+      "other": [
+        {"type": "reverb", "params": {"room_size": 0.5, "wet_level": 0.22}, "enabled": true},
+        {"type": "stereo_width", "params": {"width": 1.3}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 9000}, "enabled": true}
+      ],
+      "global": [
+        {"type": "reverb", "params": {"room_size": 0.4, "wet_level": 0.1}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "hybrid",
+      "bank_assignments": {},
+      "sort_by": "pitch",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "Floating Points",
+    "genre": "Electronic / Jazz / Ambient",
+    "category": "Texture Weavers",
+    "description": "Pristine quarter-note chops with minimal, transparent compression and subtle reverb preserving the purity of acoustic sources.",
+    "tags": ["pristine", "minimal", "jazz", "transparent", "pure"],
+    "chop": {
+      "mode": "beat_grid",
+      "onset_sensitivity": 0.5,
+      "beat_division": 1.0,
+      "phrase_beats": 4,
+      "grain_size_ms": 50,
+      "min_chop_ms": 250,
+      "max_chop_ms": 6000,
+      "swing_amount": 0.1,
+      "silence_threshold_db": -46,
+      "prefer_downbeats": true,
+      "crossfade_ms": 12
+    },
+    "effects": {
+      "vocals": [
+        {"type": "compression", "params": {"threshold_db": -18, "ratio": 1.5, "attack_ms": 20, "release_ms": 200}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.3, "wet_level": 0.12}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "compression", "params": {"threshold_db": -16, "ratio": 2, "attack_ms": 12, "release_ms": 120}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.25, "wet_level": 0.08}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "compression", "params": {"threshold_db": -16, "ratio": 2, "attack_ms": 10, "release_ms": 130}, "enabled": true}
+      ],
+      "other": [
+        {"type": "compression", "params": {"threshold_db": -18, "ratio": 1.5, "attack_ms": 18, "release_ms": 180}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.3, "wet_level": 0.1}, "enabled": true}
+      ],
+      "global": []
+    },
+    "pad_mapping": {
+      "strategy": "chromatic",
+      "bank_assignments": {},
+      "sort_by": "pitch",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "Brian Eno",
+    "genre": "Ambient / Experimental",
+    "category": "Ambient Sculptors",
+    "description": "Expansive sixteen-beat phrase chops with immense reverb, long delay trails, and gentle filtering for infinite ambient spaces.",
+    "tags": ["ambient", "expansive", "reverb", "delay", "infinite"],
+    "chop": {
+      "mode": "phrase",
+      "onset_sensitivity": 0.3,
+      "beat_division": 1.0,
+      "phrase_beats": 16,
+      "grain_size_ms": 50,
+      "min_chop_ms": 1000,
+      "max_chop_ms": 8000,
+      "swing_amount": 0.0,
+      "silence_threshold_db": -50,
+      "prefer_downbeats": true,
+      "crossfade_ms": 30
+    },
+    "effects": {
+      "vocals": [
+        {"type": "reverb", "params": {"room_size": 0.95, "wet_level": 0.6}, "enabled": true},
+        {"type": "delay", "params": {"delay_seconds": 2.0, "feedback": 0.55, "wet_level": 0.35}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 6000}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "reverb", "params": {"room_size": 0.9, "wet_level": 0.5}, "enabled": true},
+        {"type": "delay", "params": {"delay_seconds": 1.5, "feedback": 0.45, "wet_level": 0.3}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 5000}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "reverb", "params": {"room_size": 0.8, "wet_level": 0.4}, "enabled": true},
+        {"type": "delay", "params": {"delay_seconds": 1.8, "feedback": 0.4, "wet_level": 0.25}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 4000}, "enabled": true}
+      ],
+      "other": [
+        {"type": "reverb", "params": {"room_size": 0.95, "wet_level": 0.6}, "enabled": true},
+        {"type": "delay", "params": {"delay_seconds": 2.0, "feedback": 0.5, "wet_level": 0.35}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 6000}, "enabled": true}
+      ],
+      "global": [
+        {"type": "filter_lp", "params": {"cutoff_hz": 7000}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "sequential",
+      "bank_assignments": {},
+      "sort_by": "time",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "Boards of Canada",
+    "genre": "Electronic / Downtempo / Ambient",
+    "category": "Ambient Sculptors",
+    "description": "Nostalgic four-beat phrases with warped tape flutter, vinyl dust, degraded sample rates, warm saturation, and murky filtering.",
+    "tags": ["nostalgic", "tape", "vinyl", "degraded", "warm"],
+    "chop": {
+      "mode": "phrase",
+      "onset_sensitivity": 0.4,
+      "beat_division": 1.0,
+      "phrase_beats": 4,
+      "grain_size_ms": 50,
+      "min_chop_ms": 300,
+      "max_chop_ms": 6000,
+      "swing_amount": 0.0,
+      "silence_threshold_db": -44,
+      "prefer_downbeats": true,
+      "crossfade_ms": 15
+    },
+    "effects": {
+      "vocals": [
+        {"type": "tape_wobble", "params": {"rate": 2.5, "depth": 0.3}, "enabled": true},
+        {"type": "vinyl_crackle", "params": {"vinyl_intensity": 0.45}, "enabled": true},
+        {"type": "resample", "params": {"sample_rate": 22050}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 4}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 5000}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "tape_wobble", "params": {"rate": 1.5, "depth": 0.15}, "enabled": true},
+        {"type": "vinyl_crackle", "params": {"vinyl_intensity": 0.35}, "enabled": true},
+        {"type": "resample", "params": {"sample_rate": 22050}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 3}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 6000}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "tape_wobble", "params": {"rate": 1.0, "depth": 0.1}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 3}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 4000}, "enabled": true}
+      ],
+      "other": [
+        {"type": "tape_wobble", "params": {"rate": 2.0, "depth": 0.25}, "enabled": true},
+        {"type": "vinyl_crackle", "params": {"vinyl_intensity": 0.4}, "enabled": true},
+        {"type": "resample", "params": {"sample_rate": 22050}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 4}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 5000}, "enabled": true}
+      ],
+      "global": [
+        {"type": "filter_lp", "params": {"cutoff_hz": 6500}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "sequential",
+      "bank_assignments": {},
+      "sort_by": "time",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "Nicolas Jaar",
+    "genre": "Electronic / Experimental",
+    "category": "Ambient Sculptors",
+    "description": "Sparse onset chops with gentle sensitivity, spacious reverb, and wide stereo imaging for an intimate, expansive sonic field.",
+    "tags": ["sparse", "intimate", "spacious", "wide", "experimental"],
+    "chop": {
+      "mode": "onset",
+      "onset_sensitivity": 0.4,
+      "beat_division": 1.0,
+      "phrase_beats": 4,
+      "grain_size_ms": 50,
+      "min_chop_ms": 200,
+      "max_chop_ms": 6000,
+      "swing_amount": 0.0,
+      "silence_threshold_db": -46,
+      "prefer_downbeats": false,
+      "crossfade_ms": 12
+    },
+    "effects": {
+      "vocals": [
+        {"type": "reverb", "params": {"room_size": 0.75, "wet_level": 0.4}, "enabled": true},
+        {"type": "stereo_width", "params": {"width": 1.4}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -18, "ratio": 2, "attack_ms": 15, "release_ms": 150}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "reverb", "params": {"room_size": 0.5, "wet_level": 0.2}, "enabled": true},
+        {"type": "stereo_width", "params": {"width": 1.3}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -14, "ratio": 2.5, "attack_ms": 10, "release_ms": 100}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "reverb", "params": {"room_size": 0.4, "wet_level": 0.12}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -14, "ratio": 2.5, "attack_ms": 10, "release_ms": 120}, "enabled": true}
+      ],
+      "other": [
+        {"type": "reverb", "params": {"room_size": 0.7, "wet_level": 0.35}, "enabled": true},
+        {"type": "stereo_width", "params": {"width": 1.4}, "enabled": true},
+        {"type": "delay", "params": {"delay_seconds": 0.8, "feedback": 0.3, "wet_level": 0.18}, "enabled": true}
+      ],
+      "global": [
+        {"type": "stereo_width", "params": {"width": 1.2}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "sequential",
+      "bank_assignments": {},
+      "sort_by": "time",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "RZA",
+    "genre": "Hip-Hop / Martial Arts Cinema",
+    "category": "Dark Cinema",
+    "description": "Gritty, lo-fi onset chops with heavy saturation, dark reverb, aggressive low-pass filtering, and degraded sample rates evoking grimy kung-fu soundtracks.",
+    "tags": ["gritty", "dark", "lo-fi", "martial-arts", "grimy"],
+    "chop": {
+      "mode": "onset",
+      "onset_sensitivity": 0.6,
+      "beat_division": 1.0,
+      "phrase_beats": 4,
+      "grain_size_ms": 50,
+      "min_chop_ms": 100,
+      "max_chop_ms": 4000,
+      "swing_amount": 0.0,
+      "silence_threshold_db": -36,
+      "prefer_downbeats": false,
+      "crossfade_ms": 5
+    },
+    "effects": {
+      "vocals": [
+        {"type": "saturation", "params": {"drive_db": 12}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.7, "wet_level": 0.3}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 4000}, "enabled": true},
+        {"type": "resample", "params": {"sample_rate": 33075}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "saturation", "params": {"drive_db": 10}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -8, "ratio": 6, "attack_ms": 3, "release_ms": 50}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.5, "wet_level": 0.18}, "enabled": true},
+        {"type": "resample", "params": {"sample_rate": 33075}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "saturation", "params": {"drive_db": 8}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 3500}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -10, "ratio": 5, "attack_ms": 5, "release_ms": 70}, "enabled": true}
+      ],
+      "other": [
+        {"type": "saturation", "params": {"drive_db": 12}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.65, "wet_level": 0.28}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 4000}, "enabled": true},
+        {"type": "resample", "params": {"sample_rate": 33075}, "enabled": true}
+      ],
+      "global": [
+        {"type": "filter_lp", "params": {"cutoff_hz": 5000}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "grouped",
+      "bank_assignments": {},
+      "sort_by": "energy",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "Trent Reznor / Atticus Ross",
+    "genre": "Industrial / Cinematic",
+    "category": "Dark Cinema",
+    "description": "Menacing onset chops with distorted textures, heavy compression, brooding reverb, and dark filtering for bleak industrial soundscapes.",
+    "tags": ["industrial", "cinematic", "dark", "distorted", "menacing"],
+    "chop": {
+      "mode": "onset",
+      "onset_sensitivity": 0.6,
+      "beat_division": 1.0,
+      "phrase_beats": 4,
+      "grain_size_ms": 50,
+      "min_chop_ms": 100,
+      "max_chop_ms": 5000,
+      "swing_amount": 0.0,
+      "silence_threshold_db": -38,
+      "prefer_downbeats": false,
+      "crossfade_ms": 5
+    },
+    "effects": {
+      "vocals": [
+        {"type": "saturation", "params": {"drive_db": 10}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -6, "ratio": 8, "attack_ms": 2, "release_ms": 40}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.6, "wet_level": 0.3}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 5000}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "saturation", "params": {"drive_db": 8}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -4, "ratio": 8, "attack_ms": 1, "release_ms": 25}, "enabled": true},
+        {"type": "transient_shape", "params": {"attack_boost_db": 6, "sustain_db": -2}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "saturation", "params": {"drive_db": 8}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -8, "ratio": 6, "attack_ms": 3, "release_ms": 50}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 4000}, "enabled": true}
+      ],
+      "other": [
+        {"type": "saturation", "params": {"drive_db": 10}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -6, "ratio": 8, "attack_ms": 2, "release_ms": 40}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.6, "wet_level": 0.28}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 5500}, "enabled": true}
+      ],
+      "global": [
+        {"type": "compression", "params": {"threshold_db": -6, "ratio": 6, "attack_ms": 2, "release_ms": 35}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "sequential",
+      "bank_assignments": {},
+      "sort_by": "energy",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "DJ Muggs",
+    "genre": "Hip-Hop / Dark",
+    "category": "Dark Cinema",
+    "description": "Murky onset chops with analog saturation, dark low-pass filtering, vinyl grit, and cavernous reverb for a shadowy, menacing vibe.",
+    "tags": ["dark", "murky", "vinyl", "shadowy", "analog"],
+    "chop": {
+      "mode": "onset",
+      "onset_sensitivity": 0.55,
+      "beat_division": 1.0,
+      "phrase_beats": 4,
+      "grain_size_ms": 50,
+      "min_chop_ms": 120,
+      "max_chop_ms": 4500,
+      "swing_amount": 0.0,
+      "silence_threshold_db": -38,
+      "prefer_downbeats": false,
+      "crossfade_ms": 6
+    },
+    "effects": {
+      "vocals": [
+        {"type": "saturation", "params": {"drive_db": 6}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 5000}, "enabled": true},
+        {"type": "vinyl_crackle", "params": {"vinyl_intensity": 0.45}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.65, "wet_level": 0.3}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "saturation", "params": {"drive_db": 5}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -10, "ratio": 5, "attack_ms": 4, "release_ms": 55}, "enabled": true},
+        {"type": "vinyl_crackle", "params": {"vinyl_intensity": 0.3}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.4, "wet_level": 0.15}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "saturation", "params": {"drive_db": 4}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 4000}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -12, "ratio": 4, "attack_ms": 6, "release_ms": 80}, "enabled": true}
+      ],
+      "other": [
+        {"type": "saturation", "params": {"drive_db": 6}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 5000}, "enabled": true},
+        {"type": "vinyl_crackle", "params": {"vinyl_intensity": 0.4}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.6, "wet_level": 0.28}, "enabled": true}
+      ],
+      "global": [
+        {"type": "filter_lp", "params": {"cutoff_hz": 6000}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "sequential",
+      "bank_assignments": {},
+      "sort_by": "time",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "Danger Mouse",
+    "genre": "Hip-Hop / Rock / Pop",
+    "category": "Dark Cinema",
+    "description": "Polished two-beat phrase chops with warm saturation, tasteful filtering, and glue compression binding samples into cohesive arrangements.",
+    "tags": ["polished", "warm", "glue", "cinematic", "cohesive"],
+    "chop": {
+      "mode": "phrase",
+      "onset_sensitivity": 0.5,
+      "beat_division": 1.0,
+      "phrase_beats": 2,
+      "grain_size_ms": 50,
+      "min_chop_ms": 200,
+      "max_chop_ms": 5000,
+      "swing_amount": 0.0,
+      "silence_threshold_db": -40,
+      "prefer_downbeats": true,
+      "crossfade_ms": 10
+    },
+    "effects": {
+      "vocals": [
+        {"type": "saturation", "params": {"drive_db": 4}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 8000}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -12, "ratio": 3, "attack_ms": 10, "release_ms": 100}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "compression", "params": {"threshold_db": -10, "ratio": 4, "attack_ms": 5, "release_ms": 60}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 3}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "compression", "params": {"threshold_db": -12, "ratio": 3.5, "attack_ms": 8, "release_ms": 90}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 5000}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 2}, "enabled": true}
+      ],
+      "other": [
+        {"type": "saturation", "params": {"drive_db": 3}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 8000}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -12, "ratio": 3, "attack_ms": 10, "release_ms": 100}, "enabled": true}
+      ],
+      "global": [
+        {"type": "compression", "params": {"threshold_db": -10, "ratio": 2.5, "attack_ms": 12, "release_ms": 120}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "hybrid",
+      "bank_assignments": {},
+      "sort_by": "time",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "Fred Again",
+    "genre": "Electronic / UK Dance",
+    "category": "Voice Architects",
+    "description": "Long eight-beat vocal phrases with warm reverb, gentle saturation, and soft compression capturing emotional voice memos and field recordings.",
+    "tags": ["vocal", "emotional", "warm", "dance", "field-recording"],
+    "chop": {
+      "mode": "phrase",
+      "onset_sensitivity": 0.5,
+      "beat_division": 1.0,
+      "phrase_beats": 8,
+      "grain_size_ms": 50,
+      "min_chop_ms": 500,
+      "max_chop_ms": 8000,
+      "swing_amount": 0.0,
+      "silence_threshold_db": -42,
+      "prefer_downbeats": true,
+      "crossfade_ms": 12
+    },
+    "effects": {
+      "vocals": [
+        {"type": "reverb", "params": {"room_size": 0.6, "wet_level": 0.28}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 3}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -16, "ratio": 2, "attack_ms": 15, "release_ms": 150}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "compression", "params": {"threshold_db": -10, "ratio": 4, "attack_ms": 3, "release_ms": 40}, "enabled": true},
+        {"type": "transient_shape", "params": {"attack_boost_db": 3, "sustain_db": -1}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "compression", "params": {"threshold_db": -12, "ratio": 3, "attack_ms": 6, "release_ms": 80}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 6000}, "enabled": true}
+      ],
+      "other": [
+        {"type": "reverb", "params": {"room_size": 0.5, "wet_level": 0.22}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 2}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -14, "ratio": 2.5, "attack_ms": 12, "release_ms": 120}, "enabled": true}
+      ],
+      "global": [
+        {"type": "limiter", "params": {"threshold_db": -0.5, "release_ms": 40}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "sequential",
+      "bank_assignments": {},
+      "sort_by": "time",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "Bon Iver / Justin Vernon",
+    "genre": "Indie / Folk / Electronic",
+    "category": "Voice Architects",
+    "description": "Ethereal eight-beat vocal phrases pitched up with lush reverb and shimmering chorus for layered, heavenly harmonic stacking.",
+    "tags": ["ethereal", "pitched-up", "reverb", "chorus", "harmonic"],
+    "chop": {
+      "mode": "phrase",
+      "onset_sensitivity": 0.5,
+      "beat_division": 1.0,
+      "phrase_beats": 8,
+      "grain_size_ms": 50,
+      "min_chop_ms": 500,
+      "max_chop_ms": 8000,
+      "swing_amount": 0.0,
+      "silence_threshold_db": -44,
+      "prefer_downbeats": true,
+      "crossfade_ms": 18
+    },
+    "effects": {
+      "vocals": [
+        {"type": "pitch_shift", "params": {"semitones": 5}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.8, "wet_level": 0.45}, "enabled": true},
+        {"type": "chorus", "params": {"rate_hz": 0.5, "depth": 0.4, "mix": 0.3}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "compression", "params": {"threshold_db": -14, "ratio": 2.5, "attack_ms": 10, "release_ms": 100}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.4, "wet_level": 0.15}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "compression", "params": {"threshold_db": -14, "ratio": 2.5, "attack_ms": 10, "release_ms": 120}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.3, "wet_level": 0.1}, "enabled": true}
+      ],
+      "other": [
+        {"type": "pitch_shift", "params": {"semitones": 7}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.75, "wet_level": 0.4}, "enabled": true},
+        {"type": "chorus", "params": {"rate_hz": 0.4, "depth": 0.35, "mix": 0.25}, "enabled": true}
+      ],
+      "global": [
+        {"type": "reverb", "params": {"room_size": 0.6, "wet_level": 0.2}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "chromatic",
+      "bank_assignments": {},
+      "sort_by": "pitch",
+      "velocity_layers": 2
+    }
+  },
+  {
+    "name": "Bjork",
+    "genre": "Art Pop / Electronic / Experimental",
+    "category": "Voice Architects",
+    "description": "Organic vocal chops with light compression alongside granular-processed instruments and spacious reverb blending natural and synthetic worlds.",
+    "tags": ["organic", "experimental", "art-pop", "granular", "natural"],
+    "chop": {
+      "mode": "onset",
+      "onset_sensitivity": 0.5,
+      "beat_division": 1.0,
+      "phrase_beats": 4,
+      "grain_size_ms": 40,
+      "min_chop_ms": 150,
+      "max_chop_ms": 5000,
+      "swing_amount": 0.0,
+      "silence_threshold_db": -42,
+      "prefer_downbeats": false,
+      "crossfade_ms": 10
+    },
+    "effects": {
+      "vocals": [
+        {"type": "compression", "params": {"threshold_db": -16, "ratio": 2, "attack_ms": 15, "release_ms": 150}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.45, "wet_level": 0.2}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "granular", "params": {"grain_size_ms": 35, "scatter": 0.3}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.4, "wet_level": 0.18}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -12, "ratio": 3, "attack_ms": 8, "release_ms": 80}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "granular", "params": {"grain_size_ms": 40, "scatter": 0.25}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -14, "ratio": 2.5, "attack_ms": 10, "release_ms": 100}, "enabled": true}
+      ],
+      "other": [
+        {"type": "granular", "params": {"grain_size_ms": 30, "scatter": 0.4}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.5, "wet_level": 0.25}, "enabled": true},
+        {"type": "pitch_shift", "params": {"semitones": 2}, "enabled": true}
+      ],
+      "global": [
+        {"type": "reverb", "params": {"room_size": 0.35, "wet_level": 0.1}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "hybrid",
+      "bank_assignments": {},
+      "sort_by": "pitch",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "Daft Punk",
+    "genre": "Electronic / French House / Disco",
+    "category": "Genre Fusionists",
+    "description": "Funky two-beat phrase chops with swirling phaser, lush chorus, warm saturation, and filtered disco gloss for a robotic funk feel.",
+    "tags": ["disco", "funky", "phaser", "filtered", "robotic"],
+    "chop": {
+      "mode": "phrase",
+      "onset_sensitivity": 0.5,
+      "beat_division": 1.0,
+      "phrase_beats": 2,
+      "grain_size_ms": 50,
+      "min_chop_ms": 200,
+      "max_chop_ms": 4000,
+      "swing_amount": 0.0,
+      "silence_threshold_db": -38,
+      "prefer_downbeats": true,
+      "crossfade_ms": 8
+    },
+    "effects": {
+      "vocals": [
+        {"type": "phaser", "params": {"rate_hz": 0.5, "depth": 0.6, "mix": 0.3}, "enabled": true},
+        {"type": "chorus", "params": {"rate_hz": 1.0, "depth": 0.35, "mix": 0.2}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 4}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 6000}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "compression", "params": {"threshold_db": -8, "ratio": 5, "attack_ms": 3, "release_ms": 40}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 3}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "saturation", "params": {"drive_db": 4}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 5000}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -10, "ratio": 4, "attack_ms": 5, "release_ms": 60}, "enabled": true}
+      ],
+      "other": [
+        {"type": "phaser", "params": {"rate_hz": 0.4, "depth": 0.5, "mix": 0.25}, "enabled": true},
+        {"type": "chorus", "params": {"rate_hz": 0.8, "depth": 0.3, "mix": 0.18}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 4}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 6000}, "enabled": true}
+      ],
+      "global": [
+        {"type": "filter_lp", "params": {"cutoff_hz": 8000}, "enabled": true},
+        {"type": "limiter", "params": {"threshold_db": -0.5, "release_ms": 30}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "grouped",
+      "bank_assignments": {},
+      "sort_by": "time",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "Tame Impala / Kevin Parker",
+    "genre": "Psychedelic Rock / Electronic",
+    "category": "Genre Fusionists",
+    "description": "Psychedelic quarter-note chops with gentle swing, swirling phaser and chorus, tape flutter, and lush reverb for a kaleidoscopic feel.",
+    "tags": ["psychedelic", "phaser", "chorus", "tape", "dreamy"],
+    "chop": {
+      "mode": "beat_grid",
+      "onset_sensitivity": 0.5,
+      "beat_division": 1.0,
+      "phrase_beats": 4,
+      "grain_size_ms": 50,
+      "min_chop_ms": 200,
+      "max_chop_ms": 5000,
+      "swing_amount": 0.2,
+      "silence_threshold_db": -42,
+      "prefer_downbeats": true,
+      "crossfade_ms": 12
+    },
+    "effects": {
+      "vocals": [
+        {"type": "phaser", "params": {"rate_hz": 0.3, "depth": 0.5, "mix": 0.25}, "enabled": true},
+        {"type": "chorus", "params": {"rate_hz": 0.6, "depth": 0.4, "mix": 0.22}, "enabled": true},
+        {"type": "tape_wobble", "params": {"rate": 1.5, "depth": 0.15}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.6, "wet_level": 0.3}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "compression", "params": {"threshold_db": -12, "ratio": 3, "attack_ms": 8, "release_ms": 80}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.4, "wet_level": 0.15}, "enabled": true},
+        {"type": "phaser", "params": {"rate_hz": 0.2, "depth": 0.3, "mix": 0.12}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "tape_wobble", "params": {"rate": 0.8, "depth": 0.08}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 3}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -14, "ratio": 3, "attack_ms": 8, "release_ms": 100}, "enabled": true}
+      ],
+      "other": [
+        {"type": "phaser", "params": {"rate_hz": 0.25, "depth": 0.45, "mix": 0.22}, "enabled": true},
+        {"type": "chorus", "params": {"rate_hz": 0.5, "depth": 0.35, "mix": 0.2}, "enabled": true},
+        {"type": "tape_wobble", "params": {"rate": 1.2, "depth": 0.12}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.55, "wet_level": 0.28}, "enabled": true}
+      ],
+      "global": [
+        {"type": "reverb", "params": {"room_size": 0.45, "wet_level": 0.15}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "sequential",
+      "bank_assignments": {},
+      "sort_by": "time",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "Flying Lotus",
+    "genre": "Electronic / Hip-Hop / Jazz",
+    "category": "Genre Fusionists",
+    "description": "Warped onset chops with heavy swing, digital bitcrushing, pitch shifting, spacious reverb, delay trails, and granular scatter for a cosmic jazz-hop fusion.",
+    "tags": ["cosmic", "jazz-hop", "bitcrush", "warped", "experimental"],
+    "chop": {
+      "mode": "onset",
+      "onset_sensitivity": 0.6,
+      "beat_division": 1.0,
+      "phrase_beats": 4,
+      "grain_size_ms": 35,
+      "min_chop_ms": 100,
+      "max_chop_ms": 4000,
+      "swing_amount": 0.5,
+      "silence_threshold_db": -38,
+      "prefer_downbeats": false,
+      "crossfade_ms": 5
+    },
+    "effects": {
+      "vocals": [
+        {"type": "bitcrush", "params": {"bit_depth": 8, "sample_rate": 18000}, "enabled": true},
+        {"type": "pitch_shift", "params": {"semitones": 4}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.6, "wet_level": 0.3}, "enabled": true},
+        {"type": "delay", "params": {"delay_seconds": 0.375, "feedback": 0.35, "wet_level": 0.2}, "enabled": true},
+        {"type": "granular", "params": {"grain_size_ms": 25, "scatter": 0.45}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "compression", "params": {"threshold_db": -8, "ratio": 6, "attack_ms": 2, "release_ms": 35}, "enabled": true},
+        {"type": "bitcrush", "params": {"bit_depth": 10, "sample_rate": 22050}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.35, "wet_level": 0.12}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "pitch_shift", "params": {"semitones": -3}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -10, "ratio": 5, "attack_ms": 4, "release_ms": 60}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 5000}, "enabled": true}
+      ],
+      "other": [
+        {"type": "bitcrush", "params": {"bit_depth": 8, "sample_rate": 16000}, "enabled": true},
+        {"type": "pitch_shift", "params": {"semitones": 3}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.55, "wet_level": 0.25}, "enabled": true},
+        {"type": "delay", "params": {"delay_seconds": 0.5, "feedback": 0.4, "wet_level": 0.22}, "enabled": true},
+        {"type": "granular", "params": {"grain_size_ms": 30, "scatter": 0.4}, "enabled": true}
+      ],
+      "global": [
+        {"type": "compression", "params": {"threshold_db": -8, "ratio": 4, "attack_ms": 5, "release_ms": 50}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "sequential",
+      "bank_assignments": {},
+      "sort_by": "time",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "Portishead (Geoff Barrow)",
+    "genre": "Trip-Hop / Electronic",
+    "category": "Genre Fusionists",
+    "description": "Haunting onset chops with heavy vinyl crackle, dark low-pass filtering, warm saturation, and shadowy reverb for a nocturnal trip-hop atmosphere.",
+    "tags": ["trip-hop", "haunting", "vinyl", "dark", "nocturnal"],
+    "chop": {
+      "mode": "onset",
+      "onset_sensitivity": 0.55,
+      "beat_division": 1.0,
+      "phrase_beats": 4,
+      "grain_size_ms": 50,
+      "min_chop_ms": 150,
+      "max_chop_ms": 5000,
+      "swing_amount": 0.0,
+      "silence_threshold_db": -42,
+      "prefer_downbeats": false,
+      "crossfade_ms": 8
+    },
+    "effects": {
+      "vocals": [
+        {"type": "vinyl_crackle", "params": {"vinyl_intensity": 0.7}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 5000}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 5}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.65, "wet_level": 0.3}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "vinyl_crackle", "params": {"vinyl_intensity": 0.5}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -10, "ratio": 5, "attack_ms": 4, "release_ms": 55}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 4}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.4, "wet_level": 0.15}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "vinyl_crackle", "params": {"vinyl_intensity": 0.3}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 4000}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 3}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -12, "ratio": 4, "attack_ms": 6, "release_ms": 80}, "enabled": true}
+      ],
+      "other": [
+        {"type": "vinyl_crackle", "params": {"vinyl_intensity": 0.65}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 5000}, "enabled": true},
+        {"type": "saturation", "params": {"drive_db": 5}, "enabled": true},
+        {"type": "reverb", "params": {"room_size": 0.6, "wet_level": 0.28}, "enabled": true}
+      ],
+      "global": [
+        {"type": "vinyl_crackle", "params": {"vinyl_intensity": 0.4}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 6000}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "sequential",
+      "bank_assignments": {},
+      "sort_by": "time",
+      "velocity_layers": 1
+    }
+  },
+  {
+    "name": "Amon Tobin",
+    "genre": "Electronic / Drum & Bass / Experimental",
+    "category": "Genre Fusionists",
+    "description": "Aggressive onset chops with high sensitivity, extreme timestretching, granular fragmentation, wild pitch shifts, and heavy compression for a dense, sculpted sound.",
+    "tags": ["aggressive", "timestretch", "granular", "sculpted", "dense"],
+    "chop": {
+      "mode": "onset",
+      "onset_sensitivity": 0.8,
+      "beat_division": 1.0,
+      "phrase_beats": 4,
+      "grain_size_ms": 30,
+      "min_chop_ms": 80,
+      "max_chop_ms": 3500,
+      "swing_amount": 0.0,
+      "silence_threshold_db": -34,
+      "prefer_downbeats": false,
+      "crossfade_ms": 3
+    },
+    "effects": {
+      "vocals": [
+        {"type": "timestretch", "params": {"factor": 2.0}, "enabled": true},
+        {"type": "granular", "params": {"grain_size_ms": 20, "scatter": 0.6}, "enabled": true},
+        {"type": "pitch_shift", "params": {"semitones": -5}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -8, "ratio": 6, "attack_ms": 3, "release_ms": 40}, "enabled": true}
+      ],
+      "drums": [
+        {"type": "timestretch", "params": {"factor": 0.75}, "enabled": true},
+        {"type": "granular", "params": {"grain_size_ms": 15, "scatter": 0.5}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -6, "ratio": 8, "attack_ms": 1, "release_ms": 25}, "enabled": true},
+        {"type": "pitch_shift", "params": {"semitones": -3}, "enabled": true}
+      ],
+      "bass": [
+        {"type": "timestretch", "params": {"factor": 1.5}, "enabled": true},
+        {"type": "pitch_shift", "params": {"semitones": -7}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -8, "ratio": 6, "attack_ms": 3, "release_ms": 50}, "enabled": true},
+        {"type": "filter_lp", "params": {"cutoff_hz": 4000}, "enabled": true}
+      ],
+      "other": [
+        {"type": "timestretch", "params": {"factor": 2.5}, "enabled": true},
+        {"type": "granular", "params": {"grain_size_ms": 18, "scatter": 0.65}, "enabled": true},
+        {"type": "pitch_shift", "params": {"semitones": 4}, "enabled": true},
+        {"type": "compression", "params": {"threshold_db": -6, "ratio": 7, "attack_ms": 2, "release_ms": 35}, "enabled": true}
+      ],
+      "global": [
+        {"type": "compression", "params": {"threshold_db": -6, "ratio": 6, "attack_ms": 2, "release_ms": 30}, "enabled": true},
+        {"type": "limiter", "params": {"threshold_db": -0.5, "release_ms": 20}, "enabled": true}
+      ]
+    },
+    "pad_mapping": {
+      "strategy": "sequential",
+      "bank_assignments": {},
+      "sort_by": "energy",
+      "velocity_layers": 1
+    }
+  }
+]

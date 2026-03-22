@@ -1,0 +1,16 @@
+# Runtime data (downloaded audio, stems, generated packs)
+Downloads/
+Stems/
+Packs/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# macOS
+.DS_Store
+
+# Demucs models (large, downloaded on first use)
+*.th
