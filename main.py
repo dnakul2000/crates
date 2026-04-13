@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
-"""GrabStem — AI-Powered Sample Pack Factory."""
+"""Crates — AI-Powered Sample Pack Factory."""
 
+import multiprocessing
 import sys
 
-from grabstem.app import run
+from crates.app import run
 
 
 def main():
+    multiprocessing.freeze_support()
     sys.exit(run())
 
 

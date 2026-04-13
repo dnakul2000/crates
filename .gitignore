@@ -8,9 +8,18 @@ Packs/
 __pycache__/
 *.pyc
 *.pyo
+*.egg-info/
 
 # macOS
 .DS_Store
 
 # Demucs models (large, downloaded on first use)
 *.th
+
+# PyInstaller build artifacts
+dist/
+build/
+bin/
+
+# Built app bundles
+*.app/

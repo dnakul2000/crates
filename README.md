@@ -1,12 +1,12 @@
-# GrabStem
+# Crates
 
 AI-powered sample pack factory. Turn any song into an MPC-ready sample pack with one click.
 
 ## What It Does
 
-GrabStem is a desktop app (PyQt6) with four tabs:
+Crates is a desktop app (PyQt6) with four tabs:
 
-1. **Download** — Paste a Spotify URL (track, album, or playlist) and GrabStem finds and downloads the audio via YouTube
+1. **Download** — Paste a Spotify URL (track, album, or playlist) and Crates finds and downloads the audio via YouTube
 2. **Separate** — Splits songs into 4 stems (Vocals, Drums, Bass, Other) using Demucs AI models
 3. **Generate** — Chops stems into samples using one of 50 artist presets (Kanye, Madlib, J Dilla, Flying Lotus, etc.), applies effects, and maps everything to 128 MPC pads
 4. **Play** — Trigger samples from a 4x4 pad grid with keyboard or MIDI controller
@@ -25,19 +25,34 @@ GrabStem is a desktop app (PyQt6) with four tabs:
 - **MIDI input** — auto-detects MPC Mini MK3 and other controllers
 - **Authentic effects** — Voss-McCartney vinyl crackle, tape wobble, granular resynthesis with per-grain pitch spread, perceptual intensity curves
 
-## Install
+## Quick Start
+
+```bash
+./launch.sh
+```
+
+That's it. The launcher creates the virtual environment and installs dependencies automatically on first run. Subsequent launches skip straight to the app.
+
+Requires Python 3.10+ and an internet connection for first-time model downloads.
+
+## Build Standalone App
+
+To build a self-contained macOS `.app` bundle (no Python install required):
+
+```bash
+./build.sh
+```
+
+This produces `dist/Crates.app` which you can drag to `/Applications`. Runtime data (Downloads, Stems, Packs) is stored in `~/Documents/Crates/`.
+
+## Manual Install
+
+If you prefer to manage the environment yourself:
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-```
-
-Requires Python 3.10+ and an internet connection for first-time model downloads.
-
-## Run
-
-```bash
 python main.py
 ```
 
@@ -46,10 +61,14 @@ python main.py
 - **Universal MIDI controller support** — any class-compliant MIDI controller, auto-detect, configurable pad/note mapping
 - **Local file import** — skip the download step, drag in your own WAVs/MP3s/FLACs
 - **DAW export formats** — Ableton Live Sets (.als), Logic Pro projects, FL Studio (.flp)
-- **AU/VST plugin** — use GrabStem as a plugin inside your DAW
+- **AU/VST plugin** — use Crates as a plugin inside your DAW
 - **Ableton Link** — tempo-sync with other apps and devices on your network
 - **Batch CLI mode** — process multiple songs from the command line without the GUI
 
+## License
+
+MIT — see [LICENSE](LICENSE) for details.
+
 ## Disclaimer
 
-GrabStem is provided for personal and educational use. Users are responsible for ensuring they have the rights to any audio they process. This tool does not host, distribute, or provide access to copyrighted content.
+Crates is provided for personal and educational use. Users are responsible for ensuring they have the rights to any audio they process. This tool does not host, distribute, or provide access to copyrighted content.
