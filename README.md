@@ -42,19 +42,20 @@ That's it. The launcher creates the virtual environment and installs everything 
 
 Crates is a four-stage pipeline — each stage is its own tab in the app:
 
-> **Download** &ensp; Spotify URL → YouTube → audio
->
-> ⬇
->
-> **Separate** &ensp; Song → Vocals, Drums, Bass, Other &ensp;*(Demucs AI, runs locally)*
->
-> ⬇
->
-> **Generate** &ensp; Stems → 128 chops via artist preset → effects → quality gate → pad mapping
->
-> ⬇
->
-> **Play** &ensp; 4×4 pad grid → audition with keyboard or MIDI → drag into DAW or export
+```mermaid
+flowchart LR
+    A["<b>Download</b><br><i>Spotify URL<br>→ YouTube → audio</i>"]
+    B["<b>Separate</b><br><i>Demucs AI<br>→ 4 stems</i>"]
+    C["<b>Generate</b><br><i>Artist presets<br>→ 128 chops</i>"]
+    D["<b>Play</b><br><i>4×4 pad grid<br>→ MIDI / keys</i>"]
+
+    A --> B --> C --> D
+
+    style A fill:#2d2d2d,stroke:#C97F3A,color:#e8e0d6
+    style B fill:#2d2d2d,stroke:#C97F3A,color:#e8e0d6
+    style C fill:#2d2d2d,stroke:#C97F3A,color:#e8e0d6
+    style D fill:#2d2d2d,stroke:#C97F3A,color:#e8e0d6
+```
 
 ## Features
 
