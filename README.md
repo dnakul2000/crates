@@ -42,23 +42,19 @@ That's it. The launcher creates the virtual environment and installs everything 
 
 Crates is a four-stage pipeline — each stage is its own tab in the app:
 
-```
- _______________       _______________       _______________       _______________
-|               |     |               |     |               |     |               |
-|  1. Download  | --> |  2. Separate  | --> |  3. Generate  | --> |    4. Play    |
-|               |     |               |     |               |     |               |
-|  Spotify URL  |     |  Demucs AI    |     |  Artist       |     |  4x4 pad     |
-|  > YouTube    |     |  > 4 stems    |     |  presets      |     |  grid        |
-|  > audio      |     |               |     |  > 128 chops  |     |  > MIDI/keys |
-|_______________|     |_______________|     |_______________|     |_______________|
-```
-
-| Stage | What happens |
-|:------|:-------------|
-| **Download** | Paste a Spotify URL (track, album, or playlist). Crates resolves the audio via YouTube and downloads it — no API keys needed. |
-| **Separate** | Splits each song into four stems — Vocals, Drums, Bass, Other — using [Demucs](https://github.com/facebookresearch/demucs) running locally on your machine. |
-| **Generate** | Pick an artist preset. Crates chops the stems, applies effects, runs a quality gate, selects the most interesting slices, and maps them across 128 MPC pads. |
-| **Play** | Audition your pack on a 4×4 pad grid using your keyboard or MIDI controller. Drag samples straight into your DAW, or export the full pack. |
+> **Download** &ensp; Spotify URL → YouTube → audio
+>
+> ⬇
+>
+> **Separate** &ensp; Song → Vocals, Drums, Bass, Other &ensp;*(Demucs AI, runs locally)*
+>
+> ⬇
+>
+> **Generate** &ensp; Stems → 128 chops via artist preset → effects → quality gate → pad mapping
+>
+> ⬇
+>
+> **Play** &ensp; 4×4 pad grid → audition with keyboard or MIDI → drag into DAW or export
 
 ## Features
 
