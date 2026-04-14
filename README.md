@@ -26,16 +26,10 @@
 
 ---
 
-<!-- TODO: add a screenshot or demo GIF here
-<p align="center">
-  <img src=".github/assets/screenshot.png" alt="Crates screenshot" width="720" />
-</p>
--->
-
 ## Quick Start
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/Crates.git
+git clone https://github.com/dnakul2000/crates.git
 cd Crates
 ./launch.sh
 ```
