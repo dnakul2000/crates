@@ -1,53 +1,128 @@
-# Crates
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset=".github/assets/crates-logo-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset=".github/assets/crates-logo-light.svg">
+    <img alt="Crates" src=".github/assets/crates-logo-dark.svg" width="280">
+  </picture>
+</p>
 
-AI-powered sample pack factory. Turn any song into an MPC-ready sample pack with one click.
+<h3 align="center">AI-powered sample pack factory</h3>
 
-## What It Does
+<p align="center">
+  Turn any song into an MPC-ready sample pack with one click.<br>
+  50 artist presets &middot; 7 chop modes &middot; 128 pads &middot; zero configuration.
+</p>
 
-Crates is a desktop app (PyQt6) with four tabs:
+<p align="center">
+  <a href="#quick-start">Quick Start</a>&ensp;&middot;&ensp;<a href="#how-it-works">How It Works</a>&ensp;&middot;&ensp;<a href="#features">Features</a>&ensp;&middot;&ensp;<a href="#roadmap">Roadmap</a>
+</p>
 
-1. **Download** — Paste a Spotify URL (track, album, or playlist) and Crates finds and downloads the audio via YouTube
-2. **Separate** — Splits songs into 4 stems (Vocals, Drums, Bass, Other) using Demucs AI models
-3. **Generate** — Chops stems into samples using one of 50 artist presets (Kanye, Madlib, J Dilla, Flying Lotus, etc.), applies effects, and maps everything to 128 MPC pads
-4. **Play** — Trigger samples from a 4x4 pad grid with keyboard or MIDI controller
+<p align="center">
+  <img src="https://img.shields.io/badge/version-1.0.0-C97F3A?style=flat-square" alt="Version">
+  <img src="https://img.shields.io/badge/python-3.10%2B-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python 3.10+">
+  <img src="https://img.shields.io/badge/platform-macOS-000000?style=flat-square&logo=apple&logoColor=white" alt="macOS">
+  <img src="https://img.shields.io/badge/license-CC%20BY--NC%204.0-EF9421?style=flat-square&logo=creativecommons&logoColor=white" alt="License">
+</p>
+
+---
+
+<!-- TODO: add a screenshot or demo GIF here
+<p align="center">
+  <img src=".github/assets/screenshot.png" alt="Crates screenshot" width="720" />
+</p>
+-->
+
+## Quick Start
+
+```bash
+git clone https://github.com/YOUR_USERNAME/Crates.git
+cd Crates
+./launch.sh
+```
+
+That's it. The launcher creates the virtual environment and installs everything on first run. Subsequent launches skip straight to the app.
+
+> **Requirements:** Python 3.10+ and an internet connection for first-time AI model downloads.
+
+## How It Works
+
+Crates is a four-stage pipeline — each stage is its own tab in the app:
+
+```
+┌─────────────┐    ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
+│  1. Download │───▶│  2. Separate │───▶│  3. Generate │───▶│   4. Play   │
+│              │    │              │    │              │    │              │
+│ Spotify URL  │    │ Demucs AI    │    │ Artist       │    │ 4×4 pad     │
+│ → YouTube    │    │ → 4 stems    │    │ presets      │    │ grid        │
+│ → audio      │    │              │    │ → 128 chops  │    │ → MIDI/keys │
+└─────────────┘    └─────────────┘    └─────────────┘    └─────────────┘
+```
+
+| Stage | What happens |
+|:------|:-------------|
+| **Download** | Paste a Spotify URL (track, album, or playlist). Crates resolves the audio via YouTube and downloads it — no API keys needed. |
+| **Separate** | Splits each song into four stems — Vocals, Drums, Bass, Other — using [Demucs](https://github.com/facebookresearch/demucs) running locally on your machine. |
+| **Generate** | Pick an artist preset. Crates chops the stems, applies effects, runs a quality gate, selects the most interesting slices, and maps them across 128 MPC pads. |
+| **Play** | Audition your pack on a 4×4 pad grid using your keyboard or MIDI controller. Drag samples straight into your DAW, or export the full pack. |
 
 ## Features
 
-- **50 artist presets** — each with unique chop modes, effect chains, and pad mapping strategies
-- **7 chop modes** — onset, beat grid, phrase, transient, granular, syllable, random
+### Artist Presets
+
+50 presets modeled after real producers and their chopping philosophies — not genre tags, but production approaches:
+
+| Category | Producers |
+|:---------|:----------|
+| Soul Flippers | Kanye, Just Blaze, RZA, Hi-Tek, 9th Wonder |
+| Crate Diggers | Madlib, DJ Premier, Pete Rock, J Dilla, Alchemist |
+| Boom Bap Architects | DJ Muggs, Large Professor, Havoc, Buckwild, Diamond D |
+| Beat Scientists | Flying Lotus, Knxwledge, Kaytranada, Monte Booker |
+| *...and 30 more* | |
+
+Each preset defines its own chop modes, effect chains, pad mapping strategy, and sample selection criteria.
+
+### Chop Modes
+
+| Mode | Description |
+|:-----|:------------|
+| `onset` | Musical event boundaries detected by spectral flux |
+| `beat_grid` | Quantized slices locked to BPM |
+| `phrase` | Longer musical phrases based on structural analysis |
+| `transient` | Attack-point detection for percussive material |
+| `granular` | Micro-slices for texture and resynthesis |
+| `syllable` | Vocal-aware segmentation |
+| `random` | Controlled chaos with configurable density |
+
+### Audio Engine
+
 - **Quality gate** — auto-rejects stem bleed, silence, clipping, and spectral artifacts
 - **Smart selection** — diversity-aware algorithm picks the most interesting 128 samples, not just the loudest
 - **Group-aware normalization** — preserves dynamics between related samples (LUFS or peak, per-group)
-- **Audition before export** — click pads to preview, then export when you're happy
-- **MPC-compatible output** — 24-bit WAV files with `A01_kick_drums.wav` naming, plus MIDI (.mid) and MPC program (.xpm) files
-- **Drag-and-drop** — drag samples from pads directly into your DAW
-- **BPM and key tagging** — every sample tagged with source BPM, key, and beat length in the manifest
-- **MIDI input** — auto-detects MPC Mini MK3 and other controllers
 - **Authentic effects** — Voss-McCartney vinyl crackle, tape wobble, granular resynthesis with per-grain pitch spread, perceptual intensity curves
 
-## Quick Start
+### Output
+
+- **24-bit WAV** files with `A01_kick_drums.wav` naming convention
+- **MIDI file** (.mid) with velocity-mapped pad triggers
+- **MPC program** (.xpm) for direct import into MPC Software/hardware
+- **BPM and key tagging** in the pack manifest
+- **Drag-and-drop** from pads directly into your DAW
+
+### Hardware
+
+- Auto-detects **Akai MPC Mini MK3** and other class-compliant MIDI controllers
+- 16 pads × 8 banks = 128 pad slots
+- Keyboard fallback for controller-free use
+
+## Installation
+
+### One-line launch (recommended)
 
 ```bash
 ./launch.sh
 ```
 
-That's it. The launcher creates the virtual environment and installs dependencies automatically on first run. Subsequent launches skip straight to the app.
-
-Requires Python 3.10+ and an internet connection for first-time model downloads.
-
-## Build Standalone App
-
-To build a self-contained macOS `.app` bundle (no Python install required):
-
-```bash
-./build.sh
-```
-
-This produces `dist/Crates.app` which you can drag to `/Applications`. Runtime data (Downloads, Stems, Packs) is stored in `~/Documents/Crates/`.
-
-## Manual Install
-
-If you prefer to manage the environment yourself:
+### Manual setup
 
 ```bash
 python3 -m venv .venv
@@ -56,18 +131,41 @@ pip install -r requirements.txt
 python main.py
 ```
 
+### Standalone macOS app
+
+```bash
+./build.sh
+# → dist/Crates.app (drag to /Applications)
+```
+
+The built app is fully self-contained. Runtime data lives in `~/Documents/Crates/`.
+
+## Tech Stack
+
+| Component | Technology |
+|:----------|:-----------|
+| GUI | PyQt6 |
+| Stem separation | Demucs (via `audio-separator`) |
+| Audio analysis | librosa, scipy |
+| Effects | Pedalboard (Spotify) |
+| ML/classification | scikit-learn, PyTorch |
+| MIDI | mido, python-rtmidi |
+| Audio I/O | soundfile, sounddevice |
+| Download | yt-dlp |
+| Validation | Pydantic |
+
 ## Roadmap
 
-- **Universal MIDI controller support** — any class-compliant MIDI controller, auto-detect, configurable pad/note mapping
-- **Local file import** — skip the download step, drag in your own WAVs/MP3s/FLACs
-- **DAW export formats** — Ableton Live Sets (.als), Logic Pro projects, FL Studio (.flp)
-- **AU/VST plugin** — use Crates as a plugin inside your DAW
-- **Ableton Link** — tempo-sync with other apps and devices on your network
-- **Batch CLI mode** — process multiple songs from the command line without the GUI
+- [ ] Universal MIDI controller support — any class-compliant controller, auto-detect, configurable mapping
+- [ ] Local file import — skip the download step, drag in your own audio
+- [ ] DAW export formats — Ableton Live Sets (.als), Logic Pro, FL Studio (.flp)
+- [ ] AU/VST plugin — use Crates inside your DAW
+- [ ] Ableton Link — tempo-sync with other apps and devices
+- [ ] Batch CLI mode — process multiple songs headless
 
 ## License
 
-MIT — see [LICENSE](LICENSE) for details.
+This project is licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) — free to use, share, and modify for **non-commercial purposes**. See [LICENSE](LICENSE) for details.
 
 ## Disclaimer
 
