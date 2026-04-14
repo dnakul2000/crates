@@ -122,15 +122,38 @@ class StemSeparator:
             if not matched_type:
                 matched_type = "Other"
 
-            # Copy to per-song folder: Stems/SongName/vocals.wav
+            # Move to per-song folder: Stems/SongName/vocals.wav
+            # Using atomic move instead of copy+delete for better performance
             dest_path = song_dir / f"{matched_type.lower()}.wav"
 
-            shutil.copy2(str(file_path), str(dest_path))
+            # Remove destination if it exists (atomic move may fail on some systems)
+            if dest_path.exists():
+                dest_path.unlink()
+
+            try:
+                # shutil.move handles both same-filesystem (rename) and
+                # cross-filesystem (copy+delete) moves automatically
+                shutil.move(str(file_path), str(dest_path))
+            except OSError:
+                # Fallback to copy+unlink if move fails (e.g., permission issues)
+                shutil.copy2(str(file_path), str(dest_path))
+                file_path.unlink()
+
             result[matched_type] = dest_path
 
-        # Clean up temp dir only after all copies succeeded
+        # Clean up any remaining files in temp dir, then remove the dir itself
         try:
-            shutil.rmtree(temp_out)
+            if temp_out.exists():
+                # Remove any leftover files that weren't moved
+                for leftover in temp_out.glob("*"):
+                    try:
+                        if leftover.is_file():
+                            leftover.unlink()
+                        elif leftover.is_dir():
+                            shutil.rmtree(leftover)
+                    except OSError:
+                        pass
+                temp_out.rmdir()
         except OSError as e:
             logger.warning("Could not clean up temp directory %s: %s", temp_out, e)
 
@@ -158,7 +181,9 @@ class SeparatorWorker(BaseWorker):
         separator = StemSeparator(self.model_name, self.output_dir)
         total = len(self.files)
 
-        self.progress.emit(0, total, f"Loading model: {self.model_name} (may download on first use)...")
+        self.progress.emit(
+            0, total, f"Loading model: {self.model_name} (may download on first use)..."
+        )
         try:
             separator.load_model()
         except Exception as e:

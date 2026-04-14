@@ -6,12 +6,26 @@ Adapted from Karaoke/usdx-loader.py.
 
 import json
 import re
+import ssl
 import urllib.request
 from typing import List
 
 from .models import TrackInfo
 
 _USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"
+
+
+def _create_ssl_context() -> ssl.SSLContext:
+    """Create a secure SSL context with certificate verification enabled.
+
+    SECURITY FIX: Explicit SSL context with certificate verification
+    to prevent man-in-the-middle attacks.
+    """
+    context = ssl.create_default_context()
+    # Ensure certificate verification is enabled (this is the default, but explicit is safer)
+    context.check_hostname = True
+    context.verify_mode = ssl.CERT_REQUIRED
+    return context
 
 
 def parse_spotify_url(url: str) -> tuple[str, str]:
@@ -38,8 +52,12 @@ def _fetch_embed_data(entity_type: str, entity_id: str) -> dict:
     url = f"https://open.spotify.com/embed/{entity_type}/{entity_id}"
     req = urllib.request.Request(url, headers={"User-Agent": _USER_AGENT})
 
-    with urllib.request.urlopen(req, timeout=15) as resp:
-        html = resp.read().decode("utf-8", errors="replace")
+    # SECURITY FIX: Use explicit SSL context with certificate verification
+    ssl_context = _create_ssl_context()
+    with urllib.request.urlopen(req, timeout=15, context=ssl_context) as resp:
+        # SECURITY FIX: Limit response size to prevent DoS (5MB max for HTML)
+        max_size = 5 * 1024 * 1024  # 5 MB
+        html = resp.read(max_size).decode("utf-8", errors="replace")
 
     match = re.search(
         r'<script\s+id="__NEXT_DATA__"\s+type="application/json">(.*?)</script>',
@@ -49,7 +67,12 @@ def _fetch_embed_data(entity_type: str, entity_id: str) -> dict:
     if not match:
         return {}
 
-    return json.loads(match.group(1))
+    # SECURITY FIX: Validate JSON size before parsing (max 1MB)
+    json_data = match.group(1)
+    if len(json_data.encode("utf-8")) > 1024 * 1024:  # 1MB
+        return {}
+
+    return json.loads(json_data)
 
 
 def _extract_tracks_from_embed(data: dict) -> list[TrackInfo]:
@@ -69,23 +92,27 @@ def _extract_tracks_from_embed(data: dict) -> list[TrackInfo]:
             artist = item.get("subtitle", "")
             duration = item.get("duration", None)
             if title and artist:
-                tracks.append(TrackInfo(
-                    title=title,
-                    artist=artist,
-                    album=entity.get("name", ""),
-                    duration_ms=duration,
-                ))
+                tracks.append(
+                    TrackInfo(
+                        title=title,
+                        artist=artist,
+                        album=entity.get("name", ""),
+                        duration_ms=duration,
+                    )
+                )
         return tracks
 
     # Single track style: entity itself is the track
     title = entity.get("title") or entity.get("name", "")
     artist = entity.get("subtitle", "")
     if title and artist:
-        tracks.append(TrackInfo(
-            title=title,
-            artist=artist,
-            album=entity.get("albumName", ""),
-        ))
+        tracks.append(
+            TrackInfo(
+                title=title,
+                artist=artist,
+                album=entity.get("albumName", ""),
+            )
+        )
 
     return tracks
 

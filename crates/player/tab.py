@@ -25,10 +25,22 @@ class PlayerTab(QWidget):
 
     # Keyboard mapping: bottom-left origin (first 8 pads always mapped)
     KEY_TO_PAD = {
-        Qt.Key.Key_Z: 1, Qt.Key.Key_X: 2, Qt.Key.Key_C: 3, Qt.Key.Key_V: 4,
-        Qt.Key.Key_A: 5, Qt.Key.Key_S: 6, Qt.Key.Key_D: 7, Qt.Key.Key_F: 8,
-        Qt.Key.Key_Q: 9, Qt.Key.Key_W: 10, Qt.Key.Key_E: 11, Qt.Key.Key_R: 12,
-        Qt.Key.Key_1: 13, Qt.Key.Key_2: 14, Qt.Key.Key_3: 15, Qt.Key.Key_4: 16,
+        Qt.Key.Key_Z: 1,
+        Qt.Key.Key_X: 2,
+        Qt.Key.Key_C: 3,
+        Qt.Key.Key_V: 4,
+        Qt.Key.Key_A: 5,
+        Qt.Key.Key_S: 6,
+        Qt.Key.Key_D: 7,
+        Qt.Key.Key_F: 8,
+        Qt.Key.Key_Q: 9,
+        Qt.Key.Key_W: 10,
+        Qt.Key.Key_E: 11,
+        Qt.Key.Key_R: 12,
+        Qt.Key.Key_1: 13,
+        Qt.Key.Key_2: 14,
+        Qt.Key.Key_3: 15,
+        Qt.Key.Key_4: 16,
     }
 
     def __init__(self, parent=None):
@@ -87,11 +99,7 @@ class PlayerTab(QWidget):
 
         # Keyboard hint (adapts to device pad count)
         if self._device.pads_per_bank <= 8:
-            hint_text = (
-                "Keyboard:\n"
-                "A S D F  →  pads 5-8\n"
-                "Z X C V  →  pads 1-4"
-            )
+            hint_text = "Keyboard:\nA S D F  →  pads 5-8\nZ X C V  →  pads 1-4"
         else:
             hint_text = (
                 "Keyboard:\n"
@@ -161,7 +169,8 @@ class PlayerTab(QWidget):
         self.pack_combo.clear()
 
         packs = sorted(
-            d for d in PACKS_DIR.iterdir()
+            d
+            for d in PACKS_DIR.iterdir()
             if d.is_dir() and (d / "pack_manifest.json").exists()
         )
 
@@ -194,9 +203,7 @@ class PlayerTab(QWidget):
             preset = manifest.get("preset", "Unknown")
             intensity = manifest.get("intensity", 0)
             self.pack_info.setText(
-                f"Preset: {preset}\n"
-                f"Intensity: {intensity}%\n"
-                f"Samples: {total}"
+                f"Preset: {preset}\nIntensity: {intensity}%\nSamples: {total}"
             )
             self._refresh_pads()
         else:
@@ -228,7 +235,9 @@ class PlayerTab(QWidget):
             else:
                 pad_btn.clear_sample()
 
-        self.pad_count.setText(f"Bank {bank}: {assigned} / {self._device.pads_per_bank} pads loaded")
+        self.pad_count.setText(
+            f"Bank {bank}: {assigned} / {self._device.pads_per_bank} pads loaded"
+        )
 
     def _trigger_pad(self, pad_number: int):
         bank = self.bank_combo.currentText()
@@ -258,6 +267,7 @@ class PlayerTab(QWidget):
 
     def _open_pack_folder(self):
         import platform
+
         pack_path = self.pack_combo.currentData()
         path = pack_path if pack_path else str(PACKS_DIR)
         if platform.system() == "Darwin":
@@ -265,10 +275,27 @@ class PlayerTab(QWidget):
 
     def _start_midi_listener(self):
         """Start listening for MIDI input from MPC Mini MK3 or other controller."""
+        import logging
+
+        logger = logging.getLogger(__name__)
+
         try:
             import mido
+        except ImportError:
+            logger.info("MIDI support not available: mido package not installed")
+            self.pack_info.setText(
+                self.pack_info.text()
+                + "\nMIDI: Not installed (pip install mido python-rtmidi)"
+            )
+            return
+
+        try:
             available = mido.get_input_names()
             if not available:
+                logger.info("No MIDI input devices found")
+                self.pack_info.setText(
+                    self.pack_info.text() + "\nMIDI: No devices found"
+                )
                 return
 
             # Prefer MPC Mini, fall back to first available
@@ -281,11 +308,14 @@ class PlayerTab(QWidget):
                 port_name = available[0]
 
             self._midi_port = mido.open_input(port_name, callback=self._on_midi_message)
+            midi_text = f"\nMIDI: {port_name}"
+            self.pack_info.setText(self.pack_info.text() + midi_text)
+            logger.info(f"MIDI listener started on: {port_name}")
+        except Exception as e:
+            logger.warning(f"Failed to initialize MIDI: {e}")
             self.pack_info.setText(
-                self.pack_info.text() + f"\nMIDI: {port_name}"
+                self.pack_info.text() + f"\nMIDI: Error - {str(e)[:50]}"
             )
-        except (ImportError, Exception):
-            pass  # mido/rtmidi not installed or no MIDI devices
 
     def _on_midi_message(self, msg):
         """Handle incoming MIDI note-on messages."""
@@ -295,8 +325,10 @@ class PlayerTab(QWidget):
             if 1 <= pad <= self._device.pads_per_bank:
                 # Must call UI from main thread
                 from PyQt6.QtCore import QMetaObject, Q_ARG
+
                 QMetaObject.invokeMethod(
-                    self, "_trigger_pad_from_midi",
+                    self,
+                    "_trigger_pad_from_midi",
                     Qt.ConnectionType.QueuedConnection,
                     Q_ARG(int, pad),
                 )

@@ -26,11 +26,18 @@ class PadSample:
 class PlaybackEngine:
     """Manages sample loading and polyphonic playback."""
 
+    MAX_CONCURRENT_STREAMS = 8  # Limit to prevent resource exhaustion
+
     def __init__(self):
         self.samples: dict[str, list[PadSample | None]] = {}  # bank -> 16 slots
         self.pack_dir: Path | None = None
         self.manifest: dict | None = None
         self._active_streams: list[sd.OutputStream] = []
+        from collections import deque
+
+        self._stream_queue: deque[sd.OutputStream] = deque(
+            maxlen=self.MAX_CONCURRENT_STREAMS
+        )
 
     def load_pack(self, pack_dir: Path) -> bool:
         """Load all samples from a pack directory into memory."""
@@ -40,7 +47,11 @@ class PlaybackEngine:
 
         raw = manifest_path.read_text()
         # Handle NaN/Infinity values that aren't valid JSON
-        raw = raw.replace(": NaN", ": null").replace(": Infinity", ": null").replace(": -Infinity", ": null")
+        raw = (
+            raw.replace(": NaN", ": null")
+            .replace(": Infinity", ": null")
+            .replace(": -Infinity", ": null")
+        )
         try:
             self.manifest = json.loads(raw)
         except json.JSONDecodeError:
@@ -91,16 +102,22 @@ class PlaybackEngine:
             match = re.match(r"^([A-H])(\d{2})_(.+?)_\w+\.wav$", wav.name)
             if match:
                 bank, pad_str, classification = match.groups()
-                samples.append({
-                    "filename": wav.name,
-                    "bank": bank,
-                    "pad": int(pad_str),
-                    "classification": classification,
-                    "duration_ms": 0,
-                    "pitch_name": "",
-                })
+                samples.append(
+                    {
+                        "filename": wav.name,
+                        "bank": bank,
+                        "pad": int(pad_str),
+                        "classification": classification,
+                        "duration_ms": 0,
+                        "pitch_name": "",
+                    }
+                )
 
-        return {"name": pack_dir.name, "samples": samples, "total_samples": len(samples)}
+        return {
+            "name": pack_dir.name,
+            "samples": samples,
+            "total_samples": len(samples),
+        }
 
     def play(self, bank: str, pad: int):
         """Trigger playback for a pad (1-indexed). Non-blocking, polyphonic."""
@@ -115,6 +132,15 @@ class PlaybackEngine:
 
         # Stop any existing playback that's finished
         self._cleanup_streams()
+
+        # Enforce max concurrent streams limit - close oldest if needed
+        while len(self._active_streams) >= self.MAX_CONCURRENT_STREAMS:
+            oldest = self._active_streams.pop(0)
+            try:
+                oldest.stop()
+                oldest.close()
+            except Exception:
+                pass
 
         # Play in a non-blocking stream
         audio = sample.audio.copy()

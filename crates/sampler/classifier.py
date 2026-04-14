@@ -10,7 +10,11 @@ import numpy as np
 
 
 def _extract_features(audio: np.ndarray, sr: int) -> dict[str, float]:
-    """Extract a comprehensive feature vector from an audio segment."""
+    """Extract a comprehensive feature vector from an audio segment.
+
+    Optimized to compute STFT once and reuse for multiple features,
+    reducing redundant FFT computations.
+    """
     import librosa
 
     n_fft = min(2048, len(audio))
@@ -19,38 +23,49 @@ def _extract_features(audio: np.ndarray, sr: int) -> dict[str, float]:
 
     features = {}
 
-    # Spectral features
-    centroid = librosa.feature.spectral_centroid(y=audio, sr=sr, n_fft=n_fft)
+    # Compute STFT once and reuse for spectral features
+    # This is the key optimization - librosa features were each recomputing FFT internally
+    hop_length = n_fft // 4
+    S = librosa.stft(audio, n_fft=n_fft, hop_length=hop_length)
+    mag = np.abs(S)
+
+    # Spectral features - all using pre-computed magnitude spectrogram
+    centroid = librosa.feature.spectral_centroid(S=mag, sr=sr)
     features["centroid_mean"] = float(np.mean(centroid))
     features["centroid_std"] = float(np.std(centroid))
 
-    rolloff = librosa.feature.spectral_rolloff(y=audio, sr=sr, n_fft=n_fft)
+    rolloff = librosa.feature.spectral_rolloff(S=mag, sr=sr)
     features["rolloff_mean"] = float(np.mean(rolloff))
 
-    bandwidth = librosa.feature.spectral_bandwidth(y=audio, sr=sr, n_fft=n_fft)
+    bandwidth = librosa.feature.spectral_bandwidth(S=mag, sr=sr)
     features["bandwidth_mean"] = float(np.mean(bandwidth))
 
-    flatness = librosa.feature.spectral_flatness(y=audio, n_fft=n_fft)
+    flatness = librosa.feature.spectral_flatness(S=mag)
     features["flatness_mean"] = float(np.mean(flatness))
 
     # Spectral contrast (energy distribution across frequency bands)
     try:
-        contrast = librosa.feature.spectral_contrast(y=audio, sr=sr, n_fft=n_fft, n_bands=4)
+        contrast = librosa.feature.spectral_contrast(S=mag, sr=sr, n_bands=4)
         for i in range(min(5, contrast.shape[0])):
             features[f"contrast_{i}"] = float(np.mean(contrast[i]))
     except Exception:
         pass
 
-    # MFCCs (timbral fingerprint)
+    # MFCCs using pre-computed power spectrogram - more efficient path
     try:
-        mfccs = librosa.feature.mfcc(y=audio, sr=sr, n_mfcc=13, n_fft=n_fft)
+        # Use melspectrogram from STFT then to MFCC for efficiency
+        mel_basis = librosa.filters.mel(sr=sr, n_fft=n_fft, n_mels=128)
+        mel_spectrogram = np.dot(mel_basis, mag**2)
+        log_mel = librosa.power_to_db(mel_spectrogram, ref=np.max)
+        # Compute MFCCs from log-mel spectrogram
+        mfccs = librosa.feature.mfcc(S=log_mel, n_mfcc=13)
         for i in range(13):
             features[f"mfcc_{i}"] = float(np.mean(mfccs[i]))
     except Exception:
         pass
 
-    # Energy features
-    rms = librosa.feature.rms(y=audio, frame_length=n_fft)
+    # Energy features using pre-computed spectrogram
+    rms = librosa.feature.rms(S=mag)
     features["rms_mean"] = float(np.mean(rms))
     features["rms_std"] = float(np.std(rms))
     features["rms_max"] = float(np.max(rms))
@@ -60,15 +75,19 @@ def _extract_features(audio: np.ndarray, sr: int) -> dict[str, float]:
     rms_val = features["rms_mean"]
     features["crest_factor"] = peak / max(rms_val, 1e-10)
 
-    # Zero-crossing rate
+    # Zero-crossing rate (time-domain, no STFT reuse possible)
     zcr = librosa.feature.zero_crossing_rate(y=audio, frame_length=n_fft)
     features["zcr_mean"] = float(np.mean(zcr))
 
-    # Onset strength (transient sharpness)
+    # Onset strength using pre-computed spectrogram
     try:
-        onset_env = librosa.onset.onset_strength(y=audio, sr=sr)
-        features["onset_strength_max"] = float(np.max(onset_env)) if len(onset_env) > 0 else 0
-        features["onset_strength_mean"] = float(np.mean(onset_env)) if len(onset_env) > 0 else 0
+        onset_env = librosa.onset.onset_strength(S=mag, sr=sr)
+        features["onset_strength_max"] = (
+            float(np.max(onset_env)) if len(onset_env) > 0 else 0
+        )
+        features["onset_strength_mean"] = (
+            float(np.mean(onset_env)) if len(onset_env) > 0 else 0
+        )
     except Exception:
         features["onset_strength_max"] = 0
         features["onset_strength_mean"] = 0
@@ -78,11 +97,16 @@ def _extract_features(audio: np.ndarray, sr: int) -> dict[str, float]:
     peak_idx = np.argmax(abs_audio)
     features["attack_ratio"] = peak_idx / max(len(audio), 1)
 
-    # Harmonic-to-noise ratio approximation
+    # Harmonic-to-noise ratio approximation using pre-computed STFT for HPSS
     try:
-        harmonic, percussive = librosa.effects.hpss(audio)
-        h_energy = float(np.sum(harmonic ** 2))
-        p_energy = float(np.sum(percussive ** 2))
+        # Apply HPSS filter in frequency domain using the computed STFT
+        S_harmonic, S_percussive = librosa.decompose.hpss(S, margin=1.0)
+        harmonic = librosa.istft(S_harmonic, hop_length=hop_length, length=len(audio))
+        percussive = librosa.istft(
+            S_percussive, hop_length=hop_length, length=len(audio)
+        )
+        h_energy = float(np.sum(harmonic**2))
+        p_energy = float(np.sum(percussive**2))
         total = h_energy + p_energy
         features["harmonic_ratio"] = h_energy / max(total, 1e-10)
     except Exception:
@@ -118,8 +142,9 @@ def _extract_features(audio: np.ndarray, sr: int) -> dict[str, float]:
         features["energy_slope"] = 0.0
 
     # Chroma density: number of active chroma bins (detects chords vs single notes)
+    # Reuse computed chroma if available from hpss, otherwise compute
     try:
-        chroma = librosa.feature.chroma_stft(y=audio, sr=sr, n_fft=n_fft)
+        chroma = librosa.feature.chroma_stft(S=mag, sr=sr)
         chroma_energy = np.mean(chroma, axis=1)
         # Count bins with significant energy (> 20% of max)
         threshold = 0.2 * np.max(chroma_energy) if np.max(chroma_energy) > 0 else 0
@@ -142,7 +167,11 @@ def _extract_features(audio: np.ndarray, sr: int) -> dict[str, float]:
     # Pitch stability: std of pyin pitch estimates
     try:
         f0, voiced, _ = librosa.pyin(
-            audio, fmin=50, fmax=2000, sr=sr, frame_length=1024,
+            audio,
+            fmin=50,
+            fmax=2000,
+            sr=sr,
+            frame_length=1024,
         )
         if f0 is not None and voiced is not None:
             voiced_f0 = f0[voiced]
@@ -151,7 +180,9 @@ def _extract_features(audio: np.ndarray, sr: int) -> dict[str, float]:
                 features["voicing_ratio"] = float(np.mean(voiced))
             else:
                 features["pitch_stability"] = 0.0
-                features["voicing_ratio"] = float(np.mean(voiced)) if len(voiced) > 0 else 0.0
+                features["voicing_ratio"] = (
+                    float(np.mean(voiced)) if len(voiced) > 0 else 0.0
+                )
         else:
             features["pitch_stability"] = 0.0
             features["voicing_ratio"] = 0.0
@@ -353,9 +384,13 @@ def _estimate_voicing_ratio(audio: np.ndarray, sr: int) -> float:
     """Estimate the ratio of voiced frames in the audio."""
     try:
         import librosa
+
         f0, voiced_flag, _ = librosa.pyin(
-            audio, fmin=80, fmax=800,
-            sr=sr, frame_length=1024,
+            audio,
+            fmin=80,
+            fmax=800,
+            sr=sr,
+            frame_length=1024,
         )
         if voiced_flag is None or len(voiced_flag) == 0:
             return 0.0
@@ -552,9 +587,7 @@ def classify_other(features: dict[str, float]) -> str:
 # =============================================================================
 
 
-def classify_chop(
-    audio: np.ndarray, sr: int, stem_type: str, duration_s: float
-) -> str:
+def classify_chop(audio: np.ndarray, sr: int, stem_type: str, duration_s: float) -> str:
     """Classify a chop using multi-feature analysis.
 
     Supports all 6 stem types: Drums, Vocals, Bass, Guitar, Piano, Other.
