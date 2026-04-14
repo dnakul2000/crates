@@ -43,13 +43,14 @@ That's it. The launcher creates the virtual environment and installs everything 
 Crates is a four-stage pipeline — each stage is its own tab in the app:
 
 ```
-┌─────────────┐    ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
-│  1. Download │───▶│  2. Separate │───▶│  3. Generate │───▶│   4. Play   │
-│              │    │              │    │              │    │              │
-│ Spotify URL  │    │ Demucs AI    │    │ Artist       │    │ 4×4 pad     │
-│ → YouTube    │    │ → 4 stems    │    │ presets      │    │ grid        │
-│ → audio      │    │              │    │ → 128 chops  │    │ → MIDI/keys │
-└─────────────┘    └─────────────┘    └─────────────┘    └─────────────┘
+ _______________       _______________       _______________       _______________
+|               |     |               |     |               |     |               |
+|  1. Download  | --> |  2. Separate  | --> |  3. Generate  | --> |    4. Play    |
+|               |     |               |     |               |     |               |
+|  Spotify URL  |     |  Demucs AI    |     |  Artist       |     |  4x4 pad     |
+|  > YouTube    |     |  > 4 stems    |     |  presets      |     |  grid        |
+|  > audio      |     |               |     |  > 128 chops  |     |  > MIDI/keys |
+|_______________|     |_______________|     |_______________|     |_______________|
 ```
 
 | Stage | What happens |
